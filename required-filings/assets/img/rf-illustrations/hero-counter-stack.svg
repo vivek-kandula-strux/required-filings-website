@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 70" role="img" aria-label="Filings stack">
+  <rect x="10" y="46" width="60" height="14" rx="4" fill="#1a3c8c"/>
+  <rect x="6" y="32" width="68" height="14" rx="4" fill="#3461d6"/>
+  <rect x="2" y="18" width="76" height="14" rx="4" fill="#4f8cff"/>
+  <rect x="6" y="4" width="68" height="14" rx="4" fill="#ffffff" stroke="#4f8cff" stroke-width="1.5"/>
+  <path d="M22 11 l4 4 l8 -8" stroke="#3461d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="44" y="14" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="700" fill="#3461d6">FILED</text>
+</svg>

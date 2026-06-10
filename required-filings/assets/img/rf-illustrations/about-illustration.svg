@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560" role="img" aria-label="Compliance team illustration">
+  <defs>
+    <linearGradient id="aboutBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8eefb"/>
+      <stop offset="1" stop-color="#f5f8ff"/>
+    </linearGradient>
+    <linearGradient id="aboutAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#2d5bd8"/>
+    </linearGradient>
+    <linearGradient id="aboutDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a3c8c"/>
+      <stop offset="1" stop-color="#0a1929"/>
+    </linearGradient>
+    <pattern id="aboutDots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#3461d6" fill-opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="700" height="560" fill="url(#aboutBg)" rx="24"/>
+  <rect width="700" height="560" fill="url(#aboutDots)" rx="24"/>
+
+  <!-- Sun/halo effect -->
+  <circle cx="350" cy="220" r="170" fill="#4f8cff" fill-opacity="0.06"/>
+  <circle cx="350" cy="220" r="120" fill="#4f8cff" fill-opacity="0.08"/>
+
+  <!-- Three filing folders, fanned out -->
+  <g transform="translate(150 200)">
+    <!-- Back folder -->
+    <g transform="translate(0 30) rotate(-9 100 110)">
+      <rect width="180" height="220" rx="12" fill="#ffffff" stroke="#cdd9f1" stroke-width="1.5"/>
+      <rect width="180" height="36" rx="12" fill="url(#aboutDeep)"/>
+      <rect y="24" width="180" height="12" fill="url(#aboutDeep)"/>
+      <text x="16" y="24" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="1.5">GST</text>
+      <rect x="18" y="56" width="80" height="8" rx="4" fill="#7a8aa8" fill-opacity="0.55"/>
+      <rect x="18" y="74" width="144" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.35"/>
+      <rect x="18" y="88" width="120" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.35"/>
+      <rect x="18" y="102" width="140" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.35"/>
+      <rect x="18" y="130" width="60" height="22" rx="4" fill="#22c55e" fill-opacity="0.18"/>
+      <text x="48" y="146" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#15803d">FILED</text>
+    </g>
+
+    <!-- Middle folder (front, raised) -->
+    <g transform="translate(110 0)">
+      <rect width="200" height="260" rx="14" fill="#ffffff" stroke="#3461d6" stroke-opacity="0.35" stroke-width="2"/>
+      <rect width="200" height="40" rx="14" fill="url(#aboutAccent)"/>
+      <rect y="26" width="200" height="14" fill="url(#aboutAccent)"/>
+      <circle cx="22" cy="20" r="8" fill="#ffffff" fill-opacity="0.95"/>
+      <path d="M18 20 l3 3 l6 -6" stroke="#3461d6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="38" y="26" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" letter-spacing="1">ROC ANNUAL</text>
+
+      <rect x="20" y="64" width="100" height="9" rx="4" fill="#3461d6" fill-opacity="0.7"/>
+      <rect x="20" y="84" width="160" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.5"/>
+      <rect x="20" y="98" width="140" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.5"/>
+
+      <rect x="20" y="120" width="100" height="9" rx="4" fill="#3461d6" fill-opacity="0.7"/>
+      <rect x="20" y="140" width="160" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.5"/>
+      <rect x="20" y="154" width="130" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.5"/>
+      <rect x="20" y="168" width="150" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.5"/>
+
+      <rect x="20" y="198" width="160" height="42" rx="6" fill="#f1f5fc"/>
+      <text x="32" y="226" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#0a1929">MGT-7 · AOC-4</text>
+    </g>
+
+    <!-- Right folder (back, tilted) -->
+    <g transform="translate(220 30) rotate(9 100 110)">
+      <rect width="180" height="220" rx="12" fill="#ffffff" stroke="#cdd9f1" stroke-width="1.5"/>
+      <rect width="180" height="36" rx="12" fill="#1a3c8c"/>
+      <rect y="24" width="180" height="12" fill="#1a3c8c"/>
+      <text x="16" y="24" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="1.5">ITR · TDS</text>
+      <rect x="18" y="56" width="80" height="8" rx="4" fill="#7a8aa8" fill-opacity="0.55"/>
+      <rect x="18" y="74" width="144" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.35"/>
+      <rect x="18" y="88" width="100" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.35"/>
+      <rect x="18" y="102" width="130" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.35"/>
+      <rect x="18" y="130" width="60" height="22" rx="4" fill="#22c55e" fill-opacity="0.18"/>
+      <text x="48" y="146" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#15803d">FILED</text>
+    </g>
+  </g>
+
+  <!-- Bottom: timeline of milestones -->
+  <g transform="translate(80 470)">
+    <line x1="20" y1="20" x2="540" y2="20" stroke="#3461d6" stroke-width="2" stroke-dasharray="6 6" stroke-opacity="0.5"/>
+    <g transform="translate(20 20)">
+      <circle cx="0" cy="0" r="14" fill="#3461d6"/>
+      <circle cx="0" cy="0" r="6" fill="#ffffff"/>
+      <text x="0" y="36" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#0a1929">Registered</text>
+    </g>
+    <g transform="translate(200 20)">
+      <circle cx="0" cy="0" r="14" fill="#3461d6"/>
+      <circle cx="0" cy="0" r="6" fill="#ffffff"/>
+      <text x="0" y="36" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#0a1929">Filed</text>
+    </g>
+    <g transform="translate(380 20)">
+      <circle cx="0" cy="0" r="14" fill="#3461d6"/>
+      <circle cx="0" cy="0" r="6" fill="#ffffff"/>
+      <text x="0" y="36" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#0a1929">Audited</text>
+    </g>
+    <g transform="translate(540 20)">
+      <circle cx="0" cy="0" r="14" fill="#22c55e"/>
+      <path d="M-6 0 l4 4 l8 -8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="0" y="36" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#15803d">On time</text>
+    </g>
+  </g>
+</svg>

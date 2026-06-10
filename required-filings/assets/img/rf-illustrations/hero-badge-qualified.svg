@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" role="img" aria-label="Qualified team badge">
+  <defs>
+    <linearGradient id="hbqAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#2d5bd8"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="80" rx="18" fill="#ffffff" stroke="#cdd9f1" stroke-width="1.5"/>
+  <circle cx="36" cy="40" r="20" fill="url(#hbqAccent)"/>
+  <path d="M26 40 l7 7 l13 -15" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="68" y="34" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#7a8aa8" letter-spacing="1.5">VERIFIED BY</text>
+  <text x="68" y="56" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#0a1929">CA · CS team</text>
+</svg>

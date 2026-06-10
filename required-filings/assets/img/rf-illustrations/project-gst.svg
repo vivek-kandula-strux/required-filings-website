@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="GST returns filed project">
+  <defs>
+    <linearGradient id="gstBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1929"/>
+      <stop offset="1" stop-color="#1a3c8c"/>
+    </linearGradient>
+    <linearGradient id="gstAccent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cdd9f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#gstBg)" rx="12"/>
+  <g stroke="#4f8cff" stroke-opacity="0.08" stroke-width="1">
+    <path d="M0 75 H400 M0 150 H400 M0 225 H400"/>
+  </g>
+  <!-- Receipt icon -->
+  <g transform="translate(140 50)">
+    <path d="M0 0 H120 V190 L110 200 L100 190 L90 200 L80 190 L70 200 L60 190 L50 200 L40 190 L30 200 L20 190 L10 200 L0 190 Z" fill="url(#gstAccent)"/>
+    <rect x="14" y="22" width="60" height="9" rx="4" fill="#0a1929"/>
+    <rect x="14" y="40" width="92" height="6" rx="3" fill="#3461d6" fill-opacity="0.6"/>
+    <rect x="14" y="54" width="76" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.5"/>
+    <rect x="14" y="68" width="88" height="6" rx="3" fill="#7a8aa8" fill-opacity="0.5"/>
+    <line x1="14" y1="88" x2="106" y2="88" stroke="#7a8aa8" stroke-opacity="0.3" stroke-dasharray="3 3"/>
+    <rect x="14" y="100" width="40" height="6" rx="3" fill="#0a1929"/>
+    <rect x="70" y="100" width="36" height="6" rx="3" fill="#0a1929"/>
+    <rect x="14" y="116" width="40" height="6" rx="3" fill="#0a1929"/>
+    <rect x="70" y="116" width="36" height="6" rx="3" fill="#0a1929"/>
+    <line x1="14" y1="138" x2="106" y2="138" stroke="#0a1929" stroke-opacity="0.3"/>
+    <rect x="14" y="150" width="50" height="9" rx="4" fill="#0a1929"/>
+    <rect x="70" y="150" width="36" height="9" rx="4" fill="#3461d6"/>
+  </g>
+  <g transform="translate(20 240)">
+    <rect width="120" height="36" rx="18" fill="#22c55e" fill-opacity="0.18" stroke="#22c55e" stroke-opacity="0.4"/>
+    <circle cx="22" cy="18" r="8" fill="#22c55e"/>
+    <path d="M17 18 l4 4 l8 -8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="38" y="23" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#86efac">All Filed</text>
+  </g>
+  <text x="380" y="265" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#5d9fff">GST · GSTR-1 / 3B</text>
+</svg>

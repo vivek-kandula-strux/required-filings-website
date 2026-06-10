@@ -1,0 +1,25 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Tool artifacts
+.gstack/
+
+# Local audit / one-off output
+_audit_screenshots/
+
+# Node / build (not used today, but in case)
+node_modules/
+dist/
+build/
+*.log
+.env
+.env.local

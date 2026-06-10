@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" role="img" aria-label="Three-step filing process illustration">
+  <defs>
+    <linearGradient id="faqBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1929"/>
+      <stop offset="1" stop-color="#1a3c8c"/>
+    </linearGradient>
+    <linearGradient id="faqAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5d9fff"/>
+      <stop offset="1" stop-color="#2d5bd8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="700" fill="url(#faqBg)" rx="24"/>
+
+  <!-- Subtle background grid -->
+  <g stroke="#4f8cff" stroke-opacity="0.06" stroke-width="1">
+    <path d="M0 100 H600 M0 200 H600 M0 300 H600 M0 400 H600 M0 500 H600 M0 600 H600"/>
+    <path d="M100 0 V700 M200 0 V700 M300 0 V700 M400 0 V700 M500 0 V700"/>
+  </g>
+
+  <!-- Connecting line through steps -->
+  <line x1="80" y1="160" x2="80" y2="560" stroke="#5d9fff" stroke-width="2" stroke-dasharray="4 6" stroke-opacity="0.5"/>
+
+  <!-- Step 1 -->
+  <g transform="translate(40 120)">
+    <circle cx="40" cy="40" r="34" fill="url(#faqAccent)"/>
+    <text x="40" y="48" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">1</text>
+    <g transform="translate(96 4)">
+      <rect width="440" height="100" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#5d9fff" stroke-opacity="0.25" stroke-width="1.5"/>
+      <text x="22" y="32" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#5d9fff" letter-spacing="1.5">UNDERSTAND</text>
+      <text x="22" y="58" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Map every filing you owe</text>
+      <text x="22" y="82" font-family="Inter, Arial, sans-serif" font-size="13" fill="#cdd9f1">One call. Past, current, recurring. In writing.</text>
+    </g>
+  </g>
+
+  <!-- Step 2 -->
+  <g transform="translate(40 290)">
+    <circle cx="40" cy="40" r="34" fill="url(#faqAccent)"/>
+    <text x="40" y="48" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">2</text>
+    <g transform="translate(96 4)">
+      <rect width="440" height="100" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#5d9fff" stroke-opacity="0.25" stroke-width="1.5"/>
+      <text x="22" y="32" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#5d9fff" letter-spacing="1.5">PREPARE</text>
+      <text x="22" y="58" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Share documents. We prep filings.</text>
+      <text x="22" y="82" font-family="Inter, Arial, sans-serif" font-size="13" fill="#cdd9f1">Secure link. CA/CS reviews. You approve.</text>
+    </g>
+  </g>
+
+  <!-- Step 3 -->
+  <g transform="translate(40 460)">
+    <circle cx="40" cy="40" r="34" fill="#22c55e"/>
+    <path d="M30 40 l8 8 l16 -18" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <g transform="translate(96 4)">
+      <rect width="440" height="100" rx="14" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="22" y="32" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#86efac" letter-spacing="1.5">FILE &amp; CONFIRM</text>
+      <text x="22" y="58" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Submitted. Proof in 24 hours.</text>
+      <text x="22" y="82" font-family="Inter, Arial, sans-serif" font-size="13" fill="#cdd9f1">MCA, GST, Income Tax. Acknowledgement delivered.</text>
+    </g>
+  </g>
+</svg>

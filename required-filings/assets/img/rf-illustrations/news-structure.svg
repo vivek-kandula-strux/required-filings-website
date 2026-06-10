@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Pvt Ltd vs LLP article cover">
+  <defs>
+    <linearGradient id="nsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a3c8c"/>
+      <stop offset="1" stop-color="#3461d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="220" fill="url(#nsBg)" rx="12"/>
+  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1">
+    <path d="M0 55 H400 M0 110 H400 M0 165 H400"/>
+  </g>
+  <text x="32" y="48" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#86b7ff" letter-spacing="2">DECISION GUIDE</text>
+  <text x="32" y="92" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#ffffff">Pvt Ltd vs LLP</text>
+  <text x="32" y="130" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#cdd9f1">Which structure fits</text>
+  <text x="32" y="152" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#cdd9f1">your business?</text>
+  <!-- Comparison scales icon -->
+  <g transform="translate(280 70)">
+    <line x1="50" y1="0" x2="50" y2="80" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <line x1="10" y1="20" x2="90" y2="20" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <line x1="20" y1="20" x2="14" y2="48" stroke="#ffffff" stroke-width="2"/>
+    <line x1="20" y1="20" x2="26" y2="48" stroke="#ffffff" stroke-width="2"/>
+    <line x1="80" y1="20" x2="74" y2="36" stroke="#ffffff" stroke-width="2"/>
+    <line x1="80" y1="20" x2="86" y2="36" stroke="#ffffff" stroke-width="2"/>
+    <rect x="2" y="48" width="36" height="22" rx="4" fill="#ffffff"/>
+    <text x="20" y="63" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="800" fill="#0a1929">PVT</text>
+    <rect x="62" y="36" width="36" height="22" rx="4" fill="#ffffff"/>
+    <text x="80" y="51" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="800" fill="#0a1929">LLP</text>
+    <circle cx="50" cy="80" r="6" fill="#ffffff"/>
+  </g>
+</svg>
