@@ -12,6 +12,10 @@ desktop.ini
 
 # Tool artifacts
 .gstack/
+.claude/
+
+# Extracted intake-doc text (regeneratable from the .docx)
+client-intake-checklist.txt
 
 # Local audit / one-off output
 _audit_screenshots/

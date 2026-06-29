@@ -55,14 +55,14 @@
 - [ ] Decide CRM destination (HubSpot / Zoho / Notion / Google Sheets)
 
 ### 4. Real business data
-- [ ] Replace `+8 (666) 123-3562` everywhere with real phone
-- [ ] Add WhatsApp click-to-chat link
-- [ ] Add real email address(es)
-- [ ] Add office address(es)
+- [x] Replace `+8 (666) 123-3562` everywhere with real phone
+- [x] Add WhatsApp click-to-chat link
+- [x] Add real email address(es)
+- [x] Add office address(es)
 - [x] Replace Melbourne "Envato" Google Map embed with real location
 - [ ] Add social links (LinkedIn at minimum)
-- [ ] Display GSTIN in footer
-- [ ] Display CIN / firm registration numbers in footer
+- [x] Display GSTIN in footer
+- [x] Display CIN / firm registration numbers in footer
 
 ### 5. Legal pages
 - [x] Privacy Policy page

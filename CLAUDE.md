@@ -31,29 +31,54 @@ The wireframe is **locked** as of 2026-06-11. The cross-page section structure m
 ## UTF-8 / encoding rule
 When editing HTML programmatically, read with `[System.IO.File]::ReadAllText($path, [System.Text.Encoding]::UTF8)` and write with `[System.IO.File]::WriteAllText($path, $content, (New-Object System.Text.UTF8Encoding $false))`. The `Get-Content -Raw` / `Set-Content -Encoding utf8` pair will mojibake em-dashes (`—` → `â€"`), curly quotes, and `₹`. Helper scripts `fix-mojibake.ps1` and `fix-alt-text.ps1` at repo root use the safe pattern.
 
-## P0 blockers needing real business data (TBD-* placeholders in the codebase)
-These are the only P0 items still open. They cannot be closed by code alone — they need the actual business detail from the owner. Search the codebase for the bracketed token to find every site that needs the value plugged in:
-- `[TBD-phone]` — real Indian phone number for `tel:` links and visible text. Used in header, offcanvas, footer, contact page.
-- `[TBD-email]` — real contact email for `mailto:` links and visible text. Used in header, offcanvas, footer, contact form error message, legal pages.
-- `[TBD: office address]`, `[TBD: registered office address]` — real Indian street address. Used in offcanvas, contact page, footer, legal pages.
-- `[TBD: +91 phone]`, `[TBD: hello@requiredfilings.com]` — visible label variants of the above.
-- `[TBD: city of registered office]` — used in terms.html jurisdiction clause.
-- `[TBD: legal entity name]` — operating company name for terms.html and disclaimer.html.
-- `[TBD: founder name]`, `[TBD: year founded]` — about.html story section.
-- `[TBD: client name]`, `[TBD: business type and city]` — homepage testimonial section. Replace when real testimonials are collected.
-- `[TBD]` — appears as `<span>[TBD]</span>` for stat counters (filings completed, on-time rate, etc.). Real numbers needed.
-- `GSTIN: [TBD]` — footer GSTIN line. Need real GSTIN.
-- `CIN/Firm reg: [TBD]` — terms.html company registration line.
-- `[TBD-form-endpoint]` — the `<form action=>` URL on every contact form. After picking a backend (Formspree, Web3Forms, Netlify Forms, etc.) replace site-wide with a single find-and-replace.
-- `[TBD-newsletter-endpoint]` — newsletter signup form action URL. Same fix pattern as above.
-- `[TBD-map-embed]` — Google Maps embed URL on contact.html.
-- `[TBD: date]` — blog post and news card dates.
-- `[TBD: real client testimonial pending. ...]` — three testimonial slides.
-- Brand carousel (`brand-1.png` … `brand-6.png`) and stock hero/about/news/project photos remain template-default. Real client logos and real photography are still needed (P0 §2 items still open).
-- Cookie banner is intentionally deferred until GA4 or Clarity is installed (P0 §5 last item, dependent on P1 §8).
-- Color-switcher / dark-mode / RTL widgets are intentionally kept (wireframe lock); the corresponding P0 §2 item is a decision deferred to the owner.
+## Intake-checklist data applied 2026-06-11
 
-When the owner provides any of these, do a global find-and-replace on the literal bracketed token and tick the matching production-checklist item.
+The client-intake-checklist.docx was returned by **B.Yamini** on 2026-06-27 and applied to the site by `apply-intake-data.ps1`, `apply-pricing-onrequest.ps1`, `apply-intake-data-2.ps1`, and `add-whatsapp.ps1`. The values now baked into every page:
+
+| Field | Value |
+|---|---|
+| Phone (also WhatsApp) | `+91 95027 15353` (E.164 `+919502715353`) |
+| Primary email | `srivaarahi.gst@srivaarahi.com` |
+| Secondary email (not displayed) | `neelambar@srivaarahi.com` |
+| Office / registered address | 1-3-183/40/A/B, Flat-101, Plot No-34, Udaya Aditya Apts, Gandhinagar, Hyderabad — 500080 |
+| Jurisdiction city | Hyderabad |
+| Working hours | Mon–Sat, 10:00–18:00 IST |
+| Legal entity | Sri Vaarahi Computer Services Pvt. Ltd. |
+| CIN | U72900TG2017PTC118162 |
+| GSTIN | 36AAYCS9154Q1ZZ |
+| Founder | Neelambar Vadrevu (Managing Director) |
+| Year founded | 2017 |
+| Filings completed | 10,800 |
+| On-time rate | 98% |
+| Active clients | 127 (not shown publicly per intake — kept for internal reference) |
+| Authorised capital threshold | ₹1,00,000 |
+| Pricing | Every service tier set to "On request" (client opted not to publish rupee amounts) |
+| Case studies | Filled with intake numbers — 26+ Pvt Ltd incorporations / 10–15 GST notice resolutions / 87+ Udyam + 4+ ISO certifications |
+| Map embed | Address-based Google Maps `q=` URL on contact.html (works without an API key) |
+| Team slot 1 | Neelambar Vadrevu, Founder & Managing Director |
+| Team slot 2 | Radhika Vadrevu (role pending — intake left blank) |
+
+## Still pending after intake (TBD tokens that remain)
+
+Only **three** TBD tokens still appear in the codebase, all blocked on infra decisions:
+
+- `[TBD-form-endpoint]` — `<form action="">` on every contact form. **Intake choice:** the client ticked both "simple email to a fixed address" AND "Google Sheets" (so the same lead must do both). Action: sign up for **Formspree** (free tier supports email + Google Sheets via Zapier integration) or **Web3Forms** (free tier sends email directly), then global find-and-replace `[TBD-form-endpoint]` site-wide.
+- `[TBD-newsletter-endpoint]` — newsletter form action URL on every page. **Intake left blank** at 9.4 (newsletter destination). Action: same as above, or pick **Mailchimp / Brevo / Zoho Campaigns** and replace.
+- `[TBD-map-embed]` — only in an **HTML comment** on contact.html now. The iframe `src` is wired to a working Google Maps `q=` URL. Replace the comment + iframe with the official Embed-API URL once the client creates their Google Business Profile (intake said "create").
+
+## Intake fields left blank / pending
+
+These were intake fields the client did not fill — site hides them gracefully or shows tasteful placeholder copy:
+
+- **Founder story** (intake 3.3) — client wrote "whatsapp", will send story over WhatsApp. The about-page line "Founded in 2017 by Neelambar Vadrevu. Built for Indian business owners…" stands as a stub until the longer story arrives.
+- **Team members 2-4 roles / photos / LinkedIn** (intake 3.4a–3.7c) — slot 2 has Radhika's name but role is blank; slots 3–4 show "Profile updating soon".
+- **Testimonials 1-5** (intake 4.6.1–4.6.5) — all blank. Site shows: "Client stories are published only after we have written permission. We are collecting these from clients we have worked with since 2017. New testimonials publish here in the weeks ahead." with name "Coming soon" and type "Real client stories pending".
+- **Social links** (intake 5.x) — LinkedIn and Instagram marked "create". Other platforms blank. Footer + offcanvas social icons still point to `#`.
+- **Blog articles** (intake 7.x) — all 5 article Y/N approvals left blank. Blog cards show placeholder titles with dates 15 Jul–19 Aug 2026.
+- **Visual assets** (intake §8) — none of the 6 visual-asset checkboxes ticked. Client said "photos shared by 05/07/2026". Hero, about, news, project, team, brand carousel still template stock.
+- **Photos shared by** — 05/07/2026 deadline.
+
+When any of these arrive, search for the matching pattern (`<a href="#">` for social, "Coming soon" / "Profile updating soon" for team and testimonials, `assets/img/inner-page/team-*` for team photos) and swap in.
 
 ## Auto-sync workflow (READ THIS BEFORE MARKING ITEMS DONE)
 When you complete a checklist item:
@@ -67,10 +92,10 @@ The Progress Snapshot is auto-generated. Do not edit it by hand — your edits w
 
 <!-- PROGRESS:START -->
 ## Progress Snapshot
-**37 / 115 items complete (32.2%)** - last synced 2026-06-11 00:34
+**43 / 115 items complete (37.4%)** - last synced 2026-06-29 12:01
 
 ### By section
-- **P0 — Cannot launch without these** - 34 / 50 (68%)
+- **P0 — Cannot launch without these** - 40 / 50 (80%)
 - **P1 — Credibility and SEO** - 3 / 27 (11%)
 - **P2 — Polish and QA before launch** - 0 / 33 (0%)
 - **P3 — Post-launch** - 0 / 5 (0%)
@@ -134,14 +159,14 @@ The Progress Snapshot is auto-generated. Do not edit it by hand — your edits w
 - [ ] Decide CRM destination (HubSpot / Zoho / Notion / Google Sheets)
 
 ### 4. Real business data
-- [ ] Replace `+8 (666) 123-3562` everywhere with real phone
-- [ ] Add WhatsApp click-to-chat link
-- [ ] Add real email address(es)
-- [ ] Add office address(es)
+- [x] Replace `+8 (666) 123-3562` everywhere with real phone
+- [x] Add WhatsApp click-to-chat link
+- [x] Add real email address(es)
+- [x] Add office address(es)
 - [x] Replace Melbourne "Envato" Google Map embed with real location
 - [ ] Add social links (LinkedIn at minimum)
-- [ ] Display GSTIN in footer
-- [ ] Display CIN / firm registration numbers in footer
+- [x] Display GSTIN in footer
+- [x] Display CIN / firm registration numbers in footer
 
 ### 5. Legal pages
 - [x] Privacy Policy page
