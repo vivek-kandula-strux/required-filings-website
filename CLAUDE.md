@@ -19,8 +19,9 @@ The site is built on top of the Brevon HTML template. 15 pages live as flat HTML
 - Default Bash tools work; this is Windows, so prefer PowerShell for `.ps1` scripts.
 
 ## WIREFRAME LOCK (do not violate)
-The wireframe is **locked** as of 2026-06-11. The cross-page section structure mirrors [buyer-file/index.html](buyer-file/index.html) and was reconciled with `required-filings/index.html` in the same session (preloader restored, BREVON watermark stripped).
-- **Do not add, remove, reorder, or restructure top-level sections** (`<section>` blocks, header, footer, hero, brand carousel, service grid, about, feature slider, project marquee, testimonials, FAQ accordion, pricing, marquee-2, news, CTA newsletter, preloader, offcanvas, color-switcher, search popup).
+The wireframe is **locked** as of 2026-06-11, updated 2026-06-29 (owner removed the preloader and pricing-section across all pages).
+- **Do not add, remove, reorder, or restructure top-level sections** (`<section>` blocks, header, footer, hero, brand carousel, service grid, about, feature slider, project marquee, testimonials, FAQ accordion, marquee-2, news, CTA newsletter, offcanvas, color-switcher, search popup).
+- **Removed by owner (2026-06-29) — do not reintroduce without asking:** preloader (`<div id="preloader">`), pricing-section (`<section class="pricing-section">` — was on home + 9 service pages).
 - **Do not change the column grid** (`col-lg-*`, `col-xl-*`), card counts per row, image aspect-ratio containers, or swiper slide counts.
 - **Do not delete or rename existing CSS classes** that the wireframe depends on (`hero-section`, `feature-box-items`, `pricing-box-items`, `news-box-items`, `accordion-box`, `marquee-group`, `swiper-slide`, etc.).
 - **Content swaps are fine** — text, image `src`, alt, link href, dropdown options, form `name`/`label`/validation, `<title>`, meta tags, schema, business data, footer addresses.
