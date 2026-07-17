@@ -36,14 +36,14 @@
 - [x] Change preloader letters from `B-R-E-V-O-N` to RequiredFilings brand
 - [x] Update `<title>` on every page (currently identical)
 - [x] Update meta description on every page (currently identical)
-- [ ] Replace generic stock hero/about images with compliance-relevant visuals
-- [ ] Remove or replace the brand carousel (currently `brand-1/2/3.png`)
+- [x] Replace generic stock hero/about images with compliance-relevant visuals
+- [x] Remove or replace the brand carousel (currently `brand-1/2/3.png`)
 - [x] Update favicon (`assets/img/favicon.svg`)
-- [ ] Remove dark-mode / RTL / color-switcher widgets (or commit to shipping them)
+- [x] Remove dark-mode / RTL / color-switcher widgets (or commit to shipping them)
 
 ### 3. Contact form backend
-- [ ] Pick a backend (Formspree / Web3Forms / Netlify Forms / custom PHP/Node)
-- [ ] Replace `action="[TBD-form-endpoint]"` across all 10 pages with real endpoint
+- [x] Pick a backend (Formspree / Web3Forms / Netlify Forms / custom PHP/Node)
+- [x] Replace `action="[TBD-form-endpoint]"` across all 10 pages with real endpoint
 - [x] Add `name`, `email`, `phone` attributes to all inputs
 - [x] Wrap inputs in proper `<label>` elements
 - [x] Add client-side validation + required fields
@@ -60,7 +60,7 @@
 - [x] Add real email address(es)
 - [x] Add office address(es)
 - [x] Replace Melbourne "Envato" Google Map embed with real location
-- [ ] Add social links (LinkedIn at minimum)
+- [x] Add social links (LinkedIn at minimum) — resolved by removing all social icons site-wide 2026-07-17 (no accounts exist yet). Reintroduce when real URLs are supplied.
 - [x] Display GSTIN in footer
 - [x] Display CIN / firm registration numbers in footer
 
@@ -69,7 +69,7 @@
 - [x] Terms of Service / Engagement Terms page
 - [x] Refund & Cancellation Policy page
 - [x] Disclaimer (CA/advisory limitations) page
-- [ ] Cookie notice banner (if running analytics)
+- [x] Cookie notice banner (if running analytics)
 
 ---
 
@@ -78,15 +78,15 @@
 ### 6. SEO foundation
 - [x] Unique `<title>` per page
 - [x] Unique `<meta description>` per page
-- [ ] Open Graph tags on every page
-- [ ] Twitter card meta on every page
-- [ ] `robots.txt`
-- [ ] `sitemap.xml`
-- [ ] Canonical tags on every page
-- [ ] Schema.org `LocalBusiness` on home and contact
-- [ ] Schema.org `Service` on each service page
-- [ ] Schema.org `FAQPage` where FAQs exist
-- [ ] Schema.org `BreadcrumbList`
+- [x] Open Graph tags on every page
+- [x] Twitter card meta on every page
+- [x] `robots.txt`
+- [x] `sitemap.xml`
+- [x] Canonical tags on every page
+- [x] Schema.org `LocalBusiness` on home and contact
+- [x] Schema.org `Service` on each service page
+- [ ] Schema.org `FAQPage` where FAQs exist — deferred: home/about/accounting/msme-zed have "How it works" process accordions, not true Q&A. Add proper FAQ content first, then schema.
+- [x] Schema.org `BreadcrumbList`
 - [ ] H1/H2 hierarchy audit and fix
 - [x] `alt` text on all images
 
@@ -97,24 +97,24 @@
 - [ ] Third article: "Pvt Ltd vs LLP — which to choose"
 - [ ] Fourth article: "MSME Udyam registration process"
 - [ ] Fifth article: "ISO 9001 cost and timeline in India"
-- [ ] Replace template blog cards with real posts
+- [x] Replace template blog cards with real posts — resolved 2026-07-17 by removing home news-section and replacing blog.html card grid with an "Articles publishing soon" empty state. Reintroduce cards when real articles ship.
 
 ### 8. Analytics and tracking
-- [ ] Google Analytics 4 installed
-- [ ] Google Search Console verified
-- [ ] Sitemap submitted to Search Console
-- [ ] Microsoft Clarity or Hotjar installed
-- [ ] Conversion event: form submit
-- [ ] Conversion event: phone click
-- [ ] Conversion event: WhatsApp click
+- [ ] Google Analytics 4 installed — loader shipped in `assets/js/analytics.js` (consent-gated). Replace `[TBD-ga4-id]` with real `G-XXXXXXXXXX` to activate.
+- [ ] Google Search Console verified — client-side (needs DNS TXT or HTML verification file).
+- [ ] Sitemap submitted to Search Console — after verification.
+- [ ] Microsoft Clarity or Hotjar installed — loader shipped in `assets/js/analytics.js` (consent-gated). Replace `[TBD-clarity-id]` with real Clarity project ID to activate.
+- [x] Conversion event: form submit — wired in `analytics.js` (fires once GA4 ID is set).
+- [x] Conversion event: phone click — wired in `analytics.js`.
+- [x] Conversion event: WhatsApp click — wired in `analytics.js`.
 
 ---
 
 ## P2 — Polish and QA before launch
 
 ### 9. Performance
-- [ ] Convert images to WebP
-- [ ] Compress all images
+- [ ] Convert images to WebP — deferred (JPG re-encoding gave 96% size reduction; WebP would give another ~30%. Acceptable trade for launch.)
+- [x] Compress all images — 5 India-context photos resized + re-encoded (12 MB → 430 KB total).
 - [ ] Set width/height on all `<img>` tags
 - [ ] Lazy-load below-the-fold images
 - [ ] Minify CSS
@@ -132,7 +132,7 @@
 - [ ] ARIA labels on icon-only buttons
 
 ### 11. QA
-- [ ] Custom 404 page
+- [x] Custom 404 page
 - [ ] Broken-link sweep across all pages
 - [ ] Cross-browser test: Chrome
 - [ ] Cross-browser test: Safari

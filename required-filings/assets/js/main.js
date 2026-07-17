@@ -592,6 +592,12 @@
     ================================ */
 
    if ($('.accordion-box').length) {
+        // Set initial aria-expanded states
+        $('.accordion-box .acc-btn').each(function() {
+            var isOpen = $(this).closest('.accordion').hasClass('active-block');
+            $(this).attr('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
         $(".accordion-box").on('click', '.acc-btn', function () {
             var outerBox = $(this).closest('.accordion-box');
             var target = $(this).closest('.accordion');
@@ -600,19 +606,27 @@
 
             if (target.hasClass('active-block')) {
                 // Already open, so close it
-                accBtn.removeClass('active');
+                accBtn.removeClass('active').attr('aria-expanded', 'false');
                 target.removeClass('active-block');
                 accContent.slideUp(300);
             } else {
                 // Close all others
                 outerBox.find('.accordion').removeClass('active-block');
-                outerBox.find('.acc-btn').removeClass('active');
+                outerBox.find('.acc-btn').removeClass('active').attr('aria-expanded', 'false');
                 outerBox.find('.acc-content').slideUp(300);
 
                 // Open clicked one
-                accBtn.addClass('active');
+                accBtn.addClass('active').attr('aria-expanded', 'true');
                 target.addClass('active-block');
                 accContent.slideDown(300);
+            }
+        });
+
+        // Keyboard: Enter/Space triggers click on div-based acc-btn
+        $(".accordion-box").on('keydown', '.acc-btn', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                $(this).trigger('click');
             }
         });
     }

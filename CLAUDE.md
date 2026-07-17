@@ -7,6 +7,7 @@ The site is built on top of the Brevon HTML template. 15 pages live as flat HTML
 
 ## Source files
 - **Checklist (source of truth):** [production-checklist.md](production-checklist.md)
+- **Modernisation build plan:** [build.md](build.md) — 18-phase fix & redesign checklist targeting 85+/100 audit score; tick items there as they complete
 - **Content principles:** [buyer-file/content-principles.md](buyer-file/content-principles.md) — every word on the site must follow these
 - **Sitemap:** [buyer-file/sitemap-required-filings.md](buyer-file/sitemap-required-filings.md)
 - **Pages:** [required-filings/](required-filings/) (flat HTML, edit directly)
@@ -19,9 +20,17 @@ The site is built on top of the Brevon HTML template. 15 pages live as flat HTML
 - Default Bash tools work; this is Windows, so prefer PowerShell for `.ps1` scripts.
 
 ## WIREFRAME LOCK (do not violate)
-The wireframe is **locked** as of 2026-06-11, updated 2026-06-29 (owner removed the preloader and pricing-section across all pages).
-- **Do not add, remove, reorder, or restructure top-level sections** (`<section>` blocks, header, footer, hero, brand carousel, service grid, about, feature slider, project marquee, testimonials, FAQ accordion, marquee-2, news, CTA newsletter, offcanvas, color-switcher, search popup).
+The wireframe is **locked** as of 2026-06-11, updated 2026-06-29 (preloader + pricing-section removed), updated 2026-07-17 (testimonials, home news section, color-switcher, search popup, header search buttons, offcanvas + footer + team-card social icons all removed).
+- **Do not add, remove, reorder, or restructure top-level sections** (`<section>` blocks, header, footer, hero, brand carousel, service grid, about, feature slider, project marquee, FAQ accordion, marquee-2, CTA newsletter, offcanvas).
 - **Removed by owner (2026-06-29) — do not reintroduce without asking:** preloader (`<div id="preloader">`), pricing-section (`<section class="pricing-section">` — was on home + 9 service pages).
+- **Removed by owner (2026-07-17) — do not reintroduce without asking:**
+  - Testimonials — `<section class="testimonial-section">` on `index.html` and `<section class="testimonial-section-3">` on `about.html`. Reason: no real client permissions yet. Reintroduce only when real testimonials land.
+  - Home "Latest news" — `<section class="news-section">` removed from `index.html` because there are no real blog posts yet. On `blog.html` the section container is kept but the fake card grid is replaced with a clean "Articles publishing soon" empty state.
+  - Color-switcher widget — `<div class="color-palate">` (Dark Mode / Light Mode toggle) removed on every page.
+  - Search popup — `<div class="search-popup">` on every page + both header `search-toggler` buttons.
+  - Social icons — offcanvas social row, footer social row, all team-card social overlays, and team-card LinkedIn overlays. Reason: no social accounts exist yet. Reintroduce only when real URLs are supplied.
+  - Team section — `<section class="team-section-3">` removed from `about.html`. Reason: only two of four slots had real people (founders — already introduced in the founder story above); slots 3–4 were "Profile updating soon" placeholders.
+  - Brand carousel — `<div class="brand-section">` (6-logo swiper) removed from `index.html`, `about.html`, `services.html`, and the 8 service pages. Reason: no real client logos exist yet. Reintroduce only when real logos land.
 - **Do not change the column grid** (`col-lg-*`, `col-xl-*`), card counts per row, image aspect-ratio containers, or swiper slide counts.
 - **Do not delete or rename existing CSS classes** that the wireframe depends on (`hero-section`, `feature-box-items`, `pricing-box-items`, `news-box-items`, `accordion-box`, `marquee-group`, `swiper-slide`, etc.).
 - **Content swaps are fine** — text, image `src`, alt, link href, dropdown options, form `name`/`label`/validation, `<title>`, meta tags, schema, business data, footer addresses.
@@ -41,13 +50,14 @@ The client-intake-checklist.docx was returned by **B.Yamini** on 2026-06-27 and 
 | Phone (also WhatsApp) | `+91 95027 15353` (E.164 `+919502715353`) |
 | Primary email | `srivaarahi.gst@srivaarahi.com` |
 | Secondary email (not displayed) | `neelambar@srivaarahi.com` |
-| Office / registered address | 1-3-183/40/A/B, Flat-101, Plot No-34, Udaya Aditya Apts, Gandhinagar, Hyderabad — 500080 |
+| Office / registered address | 1-3-183/40/A/B, Flat #101, Plot #34, Udaya Aditya Apts, Gandhinagar, Hyderabad, Telangana - 500080 |
+| Office landmark (contact page only) | Opposite Samrakshana School, next to Akshaya Fertility Clinic |
 | Jurisdiction city | Hyderabad |
 | Working hours | Mon–Sat, 10:00–18:00 IST |
 | Legal entity | Sri Vaarahi Computer Services Pvt. Ltd. |
 | CIN | U72900TG2017PTC118162 |
 | GSTIN | 36AAYCS9154Q1ZZ |
-| Founder | Neelambar Vadrevu (Managing Director) |
+| Founders | Neelambar Vadrevu (Co-Founder & Managing Director), Radhika Vadrevu (Co-Founder & Director) |
 | Year founded | 2017 |
 | Filings completed | 10,800 |
 | On-time rate | 98% |
@@ -56,28 +66,50 @@ The client-intake-checklist.docx was returned by **B.Yamini** on 2026-06-27 and 
 | Pricing | Every service tier set to "On request" (client opted not to publish rupee amounts) |
 | Case studies | Filled with intake numbers — 26+ Pvt Ltd incorporations / 10–15 GST notice resolutions / 87+ Udyam + 4+ ISO certifications |
 | Map embed | Address-based Google Maps `q=` URL on contact.html (works without an API key) |
-| Team slot 1 | Neelambar Vadrevu, Founder & Managing Director |
-| Team slot 2 | Radhika Vadrevu (role pending — intake left blank) |
+| Team slot 1 | Neelambar Vadrevu, Co-Founder & Managing Director |
+| Team slot 2 | Radhika Vadrevu, Co-Founder & Director |
 
 ## Still pending after intake (TBD tokens that remain)
 
 Only **three** TBD tokens still appear in the codebase, all blocked on infra decisions:
 
-- `[TBD-form-endpoint]` — `<form action="">` on every contact form. **Intake choice:** the client ticked both "simple email to a fixed address" AND "Google Sheets" (so the same lead must do both). Action: sign up for **Formspree** (free tier supports email + Google Sheets via Zapier integration) or **Web3Forms** (free tier sends email directly), then global find-and-replace `[TBD-form-endpoint]` site-wide.
-- `[TBD-newsletter-endpoint]` — newsletter form action URL on every page. **Intake left blank** at 9.4 (newsletter destination). Action: same as above, or pick **Mailchimp / Brevo / Zoho Campaigns** and replace.
-- `[TBD-map-embed]` — only in an **HTML comment** on contact.html now. The iframe `src` is wired to a working Google Maps `q=` URL. Replace the comment + iframe with the official Embed-API URL once the client creates their Google Business Profile (intake said "create").
+All TBD tokens were resolved on 2026-07-17:
+- `[TBD-form-endpoint]` — resolved. All 10 contact-form `action` attributes now point at the Pabbly webhook (`https://connect.pabbly.com/webhook-listener/webhook/IjU3NjAwNTY5MDYzNzA0M2Qi_pc/IjU3NjcwNTY5MDYzNTA0MzM1MjZhNTUzMDUxMzQi_pc`). Pabbly workflow must be configured client-side to route to (a) fixed email inbox and (b) Google Sheets, per intake.
+- `[TBD-newsletter-endpoint]` — resolved. All 19 newsletter-form `action` attributes now point at the same Pabbly webhook. Same routing rules apply.
+- `[TBD-map-embed]` — resolved. `contact.html` iframe now points at "Udaya Aditya Apartments, Gandhinagar, Hyderabad, Telangana 500080" via Google Maps `q=` URL at zoom 17. Upgrade to official Embed-API URL once Google Business Profile is created.
 
 ## Intake fields left blank / pending
 
 These were intake fields the client did not fill — site hides them gracefully or shows tasteful placeholder copy:
 
-- **Founder story** (intake 3.3) — client wrote "whatsapp", will send story over WhatsApp. The about-page line "Founded in 2017 by Neelambar Vadrevu. Built for Indian business owners…" stands as a stub until the longer story arrives.
-- **Team members 2-4 roles / photos / LinkedIn** (intake 3.4a–3.7c) — slot 2 has Radhika's name but role is blank; slots 3–4 show "Profile updating soon".
-- **Testimonials 1-5** (intake 4.6.1–4.6.5) — all blank. Site shows: "Client stories are published only after we have written permission. We are collecting these from clients we have worked with since 2017. New testimonials publish here in the weeks ahead." with name "Coming soon" and type "Real client stories pending".
-- **Social links** (intake 5.x) — LinkedIn and Instagram marked "create". Other platforms blank. Footer + offcanvas social icons still point to `#`.
-- **Blog articles** (intake 7.x) — all 5 article Y/N approvals left blank. Blog cards show placeholder titles with dates 15 Jul–19 Aug 2026.
-- **Visual assets** (intake §8) — none of the 6 visual-asset checkboxes ticked. Client said "photos shared by 05/07/2026". Hero, about, news, project, team, brand carousel still template stock.
-- **Photos shared by** — 05/07/2026 deadline.
+- **Founder story** (intake 3.3) — rewritten 2026-07-17. Current copy on `about.html`: two-decade MNC experience → founded RequiredFilings for MSMEs in 2017. Replace with client's longer WhatsApp version when it arrives.
+- **Team members 3-4 roles / photos / LinkedIn** (intake 3.6–3.7c) — slot 1 (Neelambar) and slot 2 (Radhika) now confirmed. Slots 3–4 still show "Profile updating soon".
+- **Testimonials 1-5** (intake 4.6.1–4.6.5) — all blank. **Section removed 2026-07-17** from home + about per owner instruction. Reintroduce when real permissions land.
+- **Social links** (intake 5.x) — no accounts yet. **All social icons removed 2026-07-17** (offcanvas, footer, team-card overlays, LinkedIn overlays). Reintroduce when URLs are supplied.
+- **Blog articles** (intake 7.x) — all 5 article Y/N approvals left blank. **Home news section removed 2026-07-17**; `blog.html` shows a clean "Articles publishing soon" empty state.
+- **Visual assets** (intake §8) — client "photos shared by 05/07/2026" deadline missed. As of 2026-07-17 the 5 highest-impact image slots were replaced with AI-generated India-context photography via Higgsfield `soul_location`:
+  - `assets/img/breadcrumb-bg.jpg` — Indian city skyline at golden hour (used on 19 inner pages as banner background)
+  - `assets/img/inner-page/about-image.jpg` — Indian office interior (about page inner hero)
+  - `assets/img/og-share.jpg` — deep teal + warm gold abstract (all pages' Open Graph share image)
+  - `assets/img/home-1/hero/hero-bg.jpg` — reused breadcrumb-bg (soul_location baked hallucinated location text into the original hero attempt; substituted with the clean skyline until credits refresh)
+  - `assets/img/home-1/cta-newsletter.jpg` — reused og-share (same reason as hero-bg)
+  - Follow-up: regenerate `hero-bg.jpg` and `cta-newsletter.jpg` with unique clean prompts (try `recraft_v4_1` model — no location-caption artifact) once credits are available. Also still template stock: project marquee (`project-1.jpg`–`project-6.jpg`), home-1/hero foreground assets (`hero-1.png`, `client-img.png`, `box1.png`, `box2.png`), and various feature/service inline images.
+
+## SEO plumbing (added 2026-07-17)
+
+Added in one pass:
+
+- `robots.txt` at site root — allows all crawlers, points at sitemap.
+- `sitemap.xml` at site root — 19 URLs with lastmod, changefreq, priority.
+- `<link rel="canonical">` on every page — points at the production URL (home canonical strips `index.html`).
+- Open Graph + Twitter card meta on every page — `og:type`, `og:site_name`, `og:title`, `og:description`, `og:url`, `og:image` (1200x630), `og:locale=en_IN`; `twitter:card=summary_large_image` + title/description/image.
+- JSON-LD Schema.org:
+  - Home: `Organization` (founders, CIN, GSTIN, address, contactPoint) + `LocalBusiness` (hours, priceRange, areaServed).
+  - Contact: `LocalBusiness` + `BreadcrumbList`.
+  - Each of 10 service pages: `Service` (serviceType, description, provider, areaServed) + 3-item `BreadcrumbList`.
+  - About, services overview, blog, and 4 legal pages: `BreadcrumbList`.
+- `404.html` — cloned from `disclaimer.html` chrome, `<meta name="robots" content="noindex, follow">`, self-canonical, "Page not found." breadcrumb + centered CTAs to home + contact + popular pages. Not listed in sitemap.
+- Still pending: `FAQPage` schema on pages with FAQ accordions (needs Q&A extraction per page — deferred).
 
 When any of these arrive, search for the matching pattern (`<a href="#">` for social, "Coming soon" / "Profile updating soon" for team and testimonials, `assets/img/inner-page/team-*` for team photos) and swap in.
 
@@ -89,16 +121,27 @@ When you complete a checklist item:
 
 The Progress Snapshot is auto-generated. Do not edit it by hand — your edits will be overwritten on next sync.
 
+## Modernisation build workflow (READ THIS BEFORE STARTING ANY BUILD PHASE)
+
+[build.md](build.md) is the active modernisation checklist. It is the source of truth for the upgrade from ~49/100 to 85+/100.
+
+**After every successful build step:**
+1. Edit [build.md](build.md) — change the completed task's `- [ ]` to `- [x]`.
+2. No sync script needed — `build.md` is self-contained and does not mirror into CLAUDE.md.
+3. If a phase reveals new issues not yet on the list, add them to the relevant phase section in `build.md` before ticking anything.
+
+**Rule:** Never mark a task `[x]` unless the change is confirmed working in the browser or verified in code. Partial implementations stay `[ ]`.
+
 ---
 
 <!-- PROGRESS:START -->
 ## Progress Snapshot
-**43 / 115 items complete (37.4%)** - last synced 2026-06-29 12:01
+**64 / 115 items complete (55.7%)** - last synced 2026-07-17 21:04
 
 ### By section
-- **P0 — Cannot launch without these** - 40 / 50 (80%)
-- **P1 — Credibility and SEO** - 3 / 27 (11%)
-- **P2 — Polish and QA before launch** - 0 / 33 (0%)
+- **P0 — Cannot launch without these** - 47 / 50 (94%)
+- **P1 — Credibility and SEO** - 15 / 27 (56%)
+- **P2 — Polish and QA before launch** - 2 / 33 (6%)
 - **P3 — Post-launch** - 0 / 5 (0%)
 
 ### Full checklist (mirror)
@@ -141,14 +184,14 @@ The Progress Snapshot is auto-generated. Do not edit it by hand — your edits w
 - [x] Change preloader letters from `B-R-E-V-O-N` to RequiredFilings brand
 - [x] Update `<title>` on every page (currently identical)
 - [x] Update meta description on every page (currently identical)
-- [ ] Replace generic stock hero/about images with compliance-relevant visuals
-- [ ] Remove or replace the brand carousel (currently `brand-1/2/3.png`)
+- [x] Replace generic stock hero/about images with compliance-relevant visuals
+- [x] Remove or replace the brand carousel (currently `brand-1/2/3.png`)
 - [x] Update favicon (`assets/img/favicon.svg`)
-- [ ] Remove dark-mode / RTL / color-switcher widgets (or commit to shipping them)
+- [x] Remove dark-mode / RTL / color-switcher widgets (or commit to shipping them)
 
 ### 3. Contact form backend
-- [ ] Pick a backend (Formspree / Web3Forms / Netlify Forms / custom PHP/Node)
-- [ ] Replace `action="[TBD-form-endpoint]"` across all 10 pages with real endpoint
+- [x] Pick a backend (Formspree / Web3Forms / Netlify Forms / custom PHP/Node)
+- [x] Replace `action="[TBD-form-endpoint]"` across all 10 pages with real endpoint
 - [x] Add `name`, `email`, `phone` attributes to all inputs
 - [x] Wrap inputs in proper `<label>` elements
 - [x] Add client-side validation + required fields
@@ -165,7 +208,7 @@ The Progress Snapshot is auto-generated. Do not edit it by hand — your edits w
 - [x] Add real email address(es)
 - [x] Add office address(es)
 - [x] Replace Melbourne "Envato" Google Map embed with real location
-- [ ] Add social links (LinkedIn at minimum)
+- [x] Add social links (LinkedIn at minimum) — resolved by removing all social icons site-wide 2026-07-17 (no accounts exist yet). Reintroduce when real URLs are supplied.
 - [x] Display GSTIN in footer
 - [x] Display CIN / firm registration numbers in footer
 
@@ -174,7 +217,7 @@ The Progress Snapshot is auto-generated. Do not edit it by hand — your edits w
 - [x] Terms of Service / Engagement Terms page
 - [x] Refund & Cancellation Policy page
 - [x] Disclaimer (CA/advisory limitations) page
-- [ ] Cookie notice banner (if running analytics)
+- [x] Cookie notice banner (if running analytics)
 
 ---
 
@@ -183,15 +226,15 @@ The Progress Snapshot is auto-generated. Do not edit it by hand — your edits w
 ### 6. SEO foundation
 - [x] Unique `<title>` per page
 - [x] Unique `<meta description>` per page
-- [ ] Open Graph tags on every page
-- [ ] Twitter card meta on every page
-- [ ] `robots.txt`
-- [ ] `sitemap.xml`
-- [ ] Canonical tags on every page
-- [ ] Schema.org `LocalBusiness` on home and contact
-- [ ] Schema.org `Service` on each service page
-- [ ] Schema.org `FAQPage` where FAQs exist
-- [ ] Schema.org `BreadcrumbList`
+- [x] Open Graph tags on every page
+- [x] Twitter card meta on every page
+- [x] `robots.txt`
+- [x] `sitemap.xml`
+- [x] Canonical tags on every page
+- [x] Schema.org `LocalBusiness` on home and contact
+- [x] Schema.org `Service` on each service page
+- [ ] Schema.org `FAQPage` where FAQs exist — deferred: home/about/accounting/msme-zed have "How it works" process accordions, not true Q&A. Add proper FAQ content first, then schema.
+- [x] Schema.org `BreadcrumbList`
 - [ ] H1/H2 hierarchy audit and fix
 - [x] `alt` text on all images
 
@@ -202,24 +245,24 @@ The Progress Snapshot is auto-generated. Do not edit it by hand — your edits w
 - [ ] Third article: "Pvt Ltd vs LLP — which to choose"
 - [ ] Fourth article: "MSME Udyam registration process"
 - [ ] Fifth article: "ISO 9001 cost and timeline in India"
-- [ ] Replace template blog cards with real posts
+- [x] Replace template blog cards with real posts — resolved 2026-07-17 by removing home news-section and replacing blog.html card grid with an "Articles publishing soon" empty state. Reintroduce cards when real articles ship.
 
 ### 8. Analytics and tracking
-- [ ] Google Analytics 4 installed
-- [ ] Google Search Console verified
-- [ ] Sitemap submitted to Search Console
-- [ ] Microsoft Clarity or Hotjar installed
-- [ ] Conversion event: form submit
-- [ ] Conversion event: phone click
-- [ ] Conversion event: WhatsApp click
+- [ ] Google Analytics 4 installed — loader shipped in `assets/js/analytics.js` (consent-gated). Replace `[TBD-ga4-id]` with real `G-XXXXXXXXXX` to activate.
+- [ ] Google Search Console verified — client-side (needs DNS TXT or HTML verification file).
+- [ ] Sitemap submitted to Search Console — after verification.
+- [ ] Microsoft Clarity or Hotjar installed — loader shipped in `assets/js/analytics.js` (consent-gated). Replace `[TBD-clarity-id]` with real Clarity project ID to activate.
+- [x] Conversion event: form submit — wired in `analytics.js` (fires once GA4 ID is set).
+- [x] Conversion event: phone click — wired in `analytics.js`.
+- [x] Conversion event: WhatsApp click — wired in `analytics.js`.
 
 ---
 
 ## P2 — Polish and QA before launch
 
 ### 9. Performance
-- [ ] Convert images to WebP
-- [ ] Compress all images
+- [ ] Convert images to WebP — deferred (JPG re-encoding gave 96% size reduction; WebP would give another ~30%. Acceptable trade for launch.)
+- [x] Compress all images — 5 India-context photos resized + re-encoded (12 MB → 430 KB total).
 - [ ] Set width/height on all `<img>` tags
 - [ ] Lazy-load below-the-fold images
 - [ ] Minify CSS
@@ -237,7 +280,7 @@ The Progress Snapshot is auto-generated. Do not edit it by hand — your edits w
 - [ ] ARIA labels on icon-only buttons
 
 ### 11. QA
-- [ ] Custom 404 page
+- [x] Custom 404 page
 - [ ] Broken-link sweep across all pages
 - [ ] Cross-browser test: Chrome
 - [ ] Cross-browser test: Safari
