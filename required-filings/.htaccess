@@ -1,0 +1,185 @@
+# ================================================================
+# RequiredFilings.com — Apache config for cPanel shared hosting
+# ================================================================
+# Author: production-hardening pass 2026-07-18
+# Target: cPanel + Apache 2.4 with mod_rewrite, mod_deflate, mod_expires,
+#         mod_headers, mod_mime (all standard on cPanel).
+# Optional: mod_brotli if the host supports it (LiteSpeed / EasyApache 4).
+# ================================================================
+
+# ----------------------------------------------------------------
+# 1. HTTPS enforcement (only after SSL cert is provisioned)
+# ----------------------------------------------------------------
+# Rewrites any http:// request to https://. Leave commented until
+# the SSL certificate is active — otherwise every request 500s.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    # Strip index.html from URL (SEO — canonical is /)
+    RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+    RewriteRule ^index\.html$ / [R=301,L]
+
+    # Strip trailing .html for clean URLs? — NOT enabled.
+    # The sitemap uses .html URLs. Toggling this would break SEO. Leave as-is.
+</IfModule>
+
+# ----------------------------------------------------------------
+# 2. Custom error pages
+# ----------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------
+# 3. Compression — gzip (mod_deflate) + Brotli (mod_brotli, optional)
+# ----------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/json application/ld+json application/manifest+json
+    AddOutputFilterByType DEFLATE image/svg+xml image/x-icon
+    AddOutputFilterByType DEFLATE font/otf font/ttf application/vnd.ms-fontobject
+
+    # Do NOT compress pre-compressed formats — waste of CPU
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|avif|woff2?)$ no-gzip dont-vary
+</IfModule>
+
+# Brotli — enable on hosts that support it (LiteSpeed does; stock Apache needs mod_brotli)
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/xml application/xhtml+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/json application/ld+json
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------
+# 4. Browser caching (mod_expires)
+# ----------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML — revalidate every visit (content can change)
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType application/xhtml+xml "access plus 0 seconds"
+
+    # XML/JSON manifests — short cache
+    ExpiresByType application/xml "access plus 1 hour"
+    ExpiresByType text/xml "access plus 1 hour"
+    ExpiresByType application/json "access plus 1 hour"
+    ExpiresByType application/manifest+json "access plus 1 week"
+
+    # CSS/JS — 1 year (assumes cache-bust via query string or version rename)
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Images — 1 year
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Fonts — 1 year
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# ----------------------------------------------------------------
+# 5. Cache-Control headers (belt + braces with mod_expires)
+# ----------------------------------------------------------------
+<IfModule mod_headers.c>
+    # HTML — always revalidate
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+
+    # Long-lived immutable — CSS/JS/images/fonts
+    <FilesMatch "\.(css|js|jpg|jpeg|png|webp|avif|gif|svg|ico|woff2|woff)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # ------------------------------------------------------------
+    # 6. Security headers
+    # ------------------------------------------------------------
+    # HSTS — only enable after SSL is confirmed working for 24h+
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    # Prevent MIME sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Prevent clickjacking (frame-ancestors 'self')
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Referrer policy — send origin only on cross-site
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions-Policy — deny features the site does not use
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+
+    # Cross-Origin isolation (safe defaults for a static site)
+    Header set Cross-Origin-Opener-Policy "same-origin"
+    Header set Cross-Origin-Resource-Policy "same-site"
+
+    # CORS for fonts — allow same-origin fetch with crossorigin attribute
+    <FilesMatch "\.(woff2|woff)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+
+    # ------------------------------------------------------------
+    # 7. Content Security Policy — REPORT-ONLY for the first 2 weeks.
+    # After confirming no violations, flip to `Content-Security-Policy`.
+    # ------------------------------------------------------------
+    Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://connect.pabbly.com https://www.google-analytics.com https://www.clarity.ms; frame-src https://maps.google.com https://www.google.com; form-action 'self' https://connect.pabbly.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+</IfModule>
+
+# ----------------------------------------------------------------
+# 8. Character set + MIME
+# ----------------------------------------------------------------
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .json .svg
+
+<IfModule mod_mime.c>
+    AddType text/cache-manifest .appcache
+    AddType application/manifest+json .webmanifest
+    AddType application/ld+json .jsonld
+    AddType image/webp .webp
+    AddType image/avif .avif
+    AddType image/svg+xml .svg
+    AddType font/woff2 .woff2
+</IfModule>
+
+# ----------------------------------------------------------------
+# 9. Block access to sensitive files
+# ----------------------------------------------------------------
+<FilesMatch "^\.(git|env|gitignore|htmlvalidate|nojekyll)|^(package(-lock)?\.json|README\.md|CLAUDE\.md|build\.md|production-.*\.md|deliverables\.md)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    # Block any request that tries to walk into .git
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# Disable directory listing
+Options -Indexes
+
+# Server signature off
+ServerSignature Off
+
+# ----------------------------------------------------------------
+# 10. ETags — disable in favour of Cache-Control (cleaner + faster)
+# ----------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None

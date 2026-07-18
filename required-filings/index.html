@@ -26,13 +26,19 @@
         <!-- ======== Page title ============ -->
         <title>RequiredFilings.com &mdash; Compliance, Registration &amp; Filing Services</title>
         <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png">
+        <!-- LCP hint: preload hero background so it doesn't wait on CSS parse.
+             imagesrcset lets the browser pick the smallest matching variant. -->
+        <link rel="preload" as="image"
+              href="assets/img/home-1/hero/hero-bg-800w.webp"
+              imagesrcset="assets/img/home-1/hero/hero-bg-800w.webp 800w, assets/img/home-1/hero/hero-bg-1200w.webp 1200w, assets/img/home-1/hero/hero-bg.webp 1600w"
+              imagesizes="100vw"
+              fetchpriority="high">
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
         <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
         <!--<< Magnific Popup.css >>-->
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <!--<< MeanMenu.css >>-->
@@ -49,8 +55,16 @@
         <style>
 /* ═══ SECTION 1 — HERO ═══ */
 .rf-hero {
-    position: relative; min-height: 100vh; display: flex; align-items: center;
+    position: relative; min-height: 100vh; min-height: 100svh;
+    display: flex; align-items: center;
     background: #080C18; overflow: hidden; padding: 180px 0 130px;
+}
+@media (max-width: 767px) {
+    /* Short mobile screens: don't force full viewport — let content size drive height */
+    .rf-hero { min-height: auto; padding: 140px 0 90px; }
+    /* Bootstrap's default container padding is 15px each side; make sure the
+       inner block never runs to the very edge on narrow phones. */
+    .rf-hero > .container { padding-left: 20px; padding-right: 20px; }
 }
 .rf-hero::before {
     content: ''; position: absolute; inset: 0;
@@ -59,7 +73,19 @@
 }
 .rf-hero__bg-img {
     position: absolute; inset: 0;
-    background: url('assets/img/home-1/hero/hero-bg.webp') center/cover no-repeat;
+    /* Fallback for browsers without image-set() (Safari <14). */
+    background: url('assets/img/home-1/hero/hero-bg-1200w.webp') center/cover no-repeat;
+    /* Modern browsers pick the smallest size that fits — mobile gets 800w (~9KB), desktop 1200w (~15KB), retina/ultrawide falls back to full-size. */
+    background-image: -webkit-image-set(
+        url('assets/img/home-1/hero/hero-bg-800w.webp') 1x,
+        url('assets/img/home-1/hero/hero-bg-1200w.webp') 1.5x,
+        url('assets/img/home-1/hero/hero-bg.webp') 2x
+    );
+    background-image: image-set(
+        url('assets/img/home-1/hero/hero-bg-800w.webp') 1x,
+        url('assets/img/home-1/hero/hero-bg-1200w.webp') 1.5x,
+        url('assets/img/home-1/hero/hero-bg.webp') 2x
+    );
     opacity: .07; z-index: 0;
 }
 .rf-hero__glow { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(90px); }
@@ -68,8 +94,13 @@
 .rf-hero > .container { position: relative; z-index: 2; }
 .rf-hero__inner { text-align: center; max-width: 840px; margin: 0 auto; }
 .rf-hero__h1 {
-    font-size: clamp(2.8rem, 6.5vw, 5.2rem); font-weight: 800; color: #fff;
-    line-height: 1.06; letter-spacing: -.032em; margin: 0 0 28px;
+    /* Floor lowered from 2.8rem → 1.9rem so long words ("business", "needs.",
+       "right.") don't overflow a 360px viewport. Desktop cap unchanged. */
+    font-size: clamp(1.9rem, 6.5vw, 5.2rem); font-weight: 800; color: #fff;
+    line-height: 1.06; letter-spacing: -.028em; margin: 0 0 28px;
+    /* Explicit break control: allow words to wrap and prevent any single
+       long token from forcing horizontal overflow. */
+    overflow-wrap: break-word; word-break: normal;
 }
 .rf-hero__h1 .rf-grad {
     background: linear-gradient(135deg, #93c5fd 0%, #6ee7b7 100%);
@@ -80,6 +111,18 @@
     max-width: 520px; margin: 0 auto 44px; line-height: 1.82;
 }
 .rf-hero__ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* Mobile phones (≤575px, Bootstrap XS): the desktop clamp floor is still too
+   large for phones — shrink H1 and sub, and stack CTAs full-width so no long
+   word ("business", "needs.", "right.") is clipped and buttons don't overflow.
+   Placed AFTER the base .rf-hero__h1 rule to win the cascade. */
+@media (max-width: 575px) {
+    .rf-hero__h1 { font-size: clamp(1.55rem, 8vw, 2.1rem); letter-spacing: -.022em; line-height: 1.1; }
+    .rf-hero__sub { font-size: .95rem; line-height: 1.6; margin-bottom: 32px; }
+    .rf-hero { padding: 130px 0 80px; }
+    .rf-hero__ctas .theme-btn,
+    .rf-hero__ctas .rf-outline-btn { width: 100%; justify-content: center; }
+}
 
 /* ═══ SECTION 2 — WHY CHOOSE US (Razor-style split) ═══ */
 .rf-why { padding: 100px 0; background: #fff; }
@@ -318,7 +361,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
 }
         </style>
         <!-- ========== JSON-LD Schema.org ========== -->
-        <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://requiredfilings.com/#organization","name":"RequiredFilings.com","legalName":"Sri Vaarahi Computer Services Pvt. Ltd.","url":"https://requiredfilings.com/","logo":"https://requiredfilings.com/assets/img/logo/black-logo.svg","foundingDate":"2017","founder":[{"@type":"Person","name":"Neelambar Vadrevu"},{"@type":"Person","name":"Radhika Vadrevu"}],"identifier":[{"@type":"PropertyValue","propertyID":"CIN","value":"U72900TG2017PTC118162"},{"@type":"PropertyValue","propertyID":"GSTIN","value":"36AAYCS9154Q1ZZ"}],"address":{"@type":"PostalAddress","streetAddress":"1-3-183/40/A/B, Flat #101, Plot #34, Udaya Aditya Apts, Gandhinagar","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500080","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-95027-15353","contactType":"customer service","email":"srivaarahi.gst@srivaarahi.com","availableLanguage":["English","Hindi","Telugu"],"areaServed":"IN"}}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://requiredfilings.com/#organization","name":"RequiredFilings.com","legalName":"Sri Vaarahi Computer Services Pvt. Ltd.","url":"https://requiredfilings.com/","logo":"https://requiredfilings.com/assets/img/logo/black-logo.png","foundingDate":"2017","founder":[{"@type":"Person","name":"Neelambar Vadrevu"},{"@type":"Person","name":"Radhika Vadrevu"}],"identifier":[{"@type":"PropertyValue","propertyID":"CIN","value":"U72900TG2017PTC118162"},{"@type":"PropertyValue","propertyID":"GSTIN","value":"36AAYCS9154Q1ZZ"}],"address":{"@type":"PostalAddress","streetAddress":"1-3-183/40/A/B, Flat #101, Plot #34, Udaya Aditya Apts, Gandhinagar","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500080","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-95027-15353","contactType":"customer service","email":"srivaarahi.gst@srivaarahi.com","availableLanguage":["English","Hindi","Telugu"],"areaServed":"IN"}}</script>
         <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://requiredfilings.com/#localbusiness","name":"RequiredFilings.com","legalName":"Sri Vaarahi Computer Services Pvt. Ltd.","image":"https://requiredfilings.com/assets/img/og-share.jpg","url":"https://requiredfilings.com/","telephone":"+91-95027-15353","email":"srivaarahi.gst@srivaarahi.com","priceRange":"On request","address":{"@type":"PostalAddress","streetAddress":"1-3-183/40/A/B, Flat #101, Plot #34, Udaya Aditya Apts, Gandhinagar","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500080","addressCountry":"IN"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"18:00"},"areaServed":{"@type":"Country","name":"India"}}</script>
     </head>
     <body>
@@ -326,7 +369,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
         <a class="skip-link" href="#main-content">Skip to main content</a>
         <div class="page-wrapper">
             <!-- Back To Top Start -->
-            <button id="back-top" class="back-to-top">
+            <button id="back-top" type="button" class="back-to-top" aria-label="Back to top">
                 <i class="fa-regular fa-arrow-up" aria-hidden="true"></i>
             </button>
 
@@ -342,7 +385,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                             <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                                 <div class="offcanvas__logo">
                                     <a href="index.html">
-                                        <img src="assets/img/logo/black-logo.svg" alt="RequiredFilings.com">
+                                        <img src="assets/img/logo/black-logo.png" alt="RequiredFilings.com">
                                     </a>
                                 </div>
                                 <div class="offcanvas__close">
@@ -423,7 +466,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                     <div class="mega-menu-wrapper">
                         <div class="header-main">
                             <a href="index.html" class="logo">
-                                <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                                <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com" width="180" height="180">
                             </a>
                             <div class="mean__menu-wrapper">
                                 <div class="main-menu">
@@ -968,7 +1011,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                             <div class="footer-widget-items">
                                                 <div class="widget-head">
                                                     <a href="index.html" class="footer-logo">
-                                                        <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com">
+                                                        <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com">
                                                     </a>
                                                 </div>
                                                 <div class="footer-content">
@@ -1093,6 +1136,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                             <li><a href="disclaimer.html">Disclaimer</a></li>
                                         </ul>
                                     </div>
+                                <p class="rf-credit">Made with <i class="fa-solid fa-heart rf-credit__heart" aria-hidden="true"></i> by <a href="https://www.struxdigital.com" target="_blank" rel="noopener noreferrer">Strux Digital</a></p>
                                 </div>
                             </div>
                         </div>
@@ -1137,7 +1181,6 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
         <!--<< Magnific Popup Js >>-->
         <script src="assets/js/jquery.magnific-popup.min.js"></script>
         <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/custom.js"></script>
         <!--<< Main.js >>-->

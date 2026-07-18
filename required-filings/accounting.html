@@ -26,15 +26,14 @@
         <!-- ======== Page title ============ -->
         <title>Accounting &amp; Bookkeeping &mdash; RequiredFilings.com</title>
         <!--<< Favcion >>-->
-        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png">
         <!--<< Bootstrap min.css >>-->
                 <link rel="preload" as="image" href="assets/img/breadcrumb-bg.webp" type="image/webp" fetchpriority="high">
         <link rel="preload" as="font" type="font/woff2" href="assets/webfonts/fa-solid-900.woff2" crossorigin>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
         <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
         <!--<< MeanMenu.css >>-->
         <link rel="stylesheet" href="assets/css/meanmenu.css">
         <!--<< Main.css >>-->
@@ -79,7 +78,7 @@
                         <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/black-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                                    <img src="assets/img/logo/black-logo.png" alt="RequiredFilings.com" width="180" height="180">
                                 </a>
                             </div>
                             <div class="offcanvas__close">
@@ -166,7 +165,7 @@
                     <div class="mega-menu-wrapper">
                         <div class="header-main">
                             <a href="index.html" class="logo">
-                                <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                                <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com" width="180" height="180">
                             </a>
                             <div class="mean__menu-wrapper">
                                 <div class="main-menu">
@@ -359,36 +358,51 @@
         <div class="rf-scroll-wrapper">
             <div class="rf-scroll-content" id="main-content">
 
-                <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb-bg.webp');">
+                <!-- Service Hero Section Start -->
+                <section class="rf-service-hero" aria-label="Accounting and Bookkeeping">
+                    <div class="rf-service-hero__bg-img" aria-hidden="true"></div>
+                    <div class="rf-service-hero__glow rf-service-hero__glow--1" aria-hidden="true"></div>
+                    <div class="rf-service-hero__glow rf-service-hero__glow--2" aria-hidden="true"></div>
                     <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Clean books. Closed every month. GST-ready.</h1>
+                        <nav class="rf-service-hero__breadcrumb wow fadeInUp" aria-label="Breadcrumb">
+                            <a href="index.html">Home</a>
+                            <span class="sep" aria-hidden="true">/</span>
+                            <a href="services.html">Services</a>
+                            <span class="sep" aria-hidden="true">/</span>
+                            <span aria-current="page">Accounting</span>
+                        </nav>
+                        <div class="rf-service-hero__inner wow fadeInUp" data-wow-delay=".15s">
+                            <span class="rf-service-hero__tag">/ Accounting &amp; Bookkeeping</span>
+                            <h1 class="rf-service-hero__h1">
+                                Clean books.<br>
+                                Closed every month.<br>
+                                <span class="rf-grad">GST-ready.</span>
+                            </h1>
+                            <p class="rf-service-hero__sub">
+                                Bookkeeping, monthly close, P&amp;L and balance sheet, payroll and software setup &mdash; on Tally, Zoho Books, QuickBooks or Xero.
+                            </p>
+                            <div class="rf-service-hero__ctas">
+                                <a href="contact.html" class="theme-btn">
+                                    <div class="btn_inner">
+                                        <div class="btn_icon"><span>
+                                        <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                        </span></div>
+                                        <div class="btn_text"><span>Talk to a filing expert</span></div>
+                                    </div>
+                                </a>
+                                <a href="services.html" class="rf-outline-btn rf-outline-btn--on-dark">
+                                    Explore all services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                </a>
                             </div>
-                            <nav aria-label="Breadcrumb">
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house" aria-hidden="true"></i> Home
-                                    </a>
-                                </li>
-                                <li>
-                                    /
-                                </li>
-                                <li><span aria-current="page">Accounting</span></li>
-                            </ul></nav>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Service Details Section Start -->
                 <section class="service-details-section fix section-padding">
                     <div class="container">
                         <div class="service-details-wrapper">
-                            <div class="service-top-img fix">
-                                <img data-speed=".8" src="assets/img/inner-page/service-details-01.jpg" alt="Service overview" loading="lazy" decoding="async" width="1320" height="720">
-                            </div>
                             <div class="row g-4">
                                 <div class="col-lg-8">
                                     <div class="service-details-content">
@@ -472,79 +486,52 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="faq-items-2 style-faq-2 mt-5">
-                                            <ul class="accordion-box">
-                                                <!--Block-->
-                                                <li class="accordion block active-block wow fadeInUp">
-                                                    <button class="acc-btn active" id="acc-btn-1" type="button" aria-expanded="true" aria-controls="acc-panel-1">
-                                                        Do you work on Tally or Zoho Books?
-                                                    <span class="icon fa-solid fa-plus" aria-hidden="true"></span>
-                                                    </button>
-                                                    <div class="acc-content current" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1">
-                                                        <div class="content">
-                                                            <div class="text">
-                                                                Both. Tally is the default for trading and manufacturing. Zoho Books works well for service businesses and startups. We also handle QuickBooks and Xero.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <!--Block-->
-                                                <li class="accordion block wow fadeInUp" data-wow-delay=".2s">
-                                                <button class="acc-btn" id="acc-btn-2" type="button" aria-expanded="false" aria-controls="acc-panel-2">
-                                                    Will you also file my GST and TDS?
-                                                        <span class="icon fa-solid fa-plus" aria-hidden="true"></span>
-                                                    </button>
-                                                    <div class="acc-content" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2">
-                                                        <div class="content">
-                                                            <div class="text">
-                                                                Yes. Our books feed straight into GST and TDS returns. You get one team for accounting and filings. No vendor hand-offs and no reconciliation gaps.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <!--Block-->
-                                                <li class="accordion block wow fadeInUp" data-wow-delay=".4s">
-                                                    <button class="acc-btn" id="acc-btn-3" type="button" aria-expanded="false" aria-controls="acc-panel-3">
-                                                        Can you fix two years of pending books?
-                                                        <span class="icon fa-solid fa-plus" aria-hidden="true"></span>
-                                                    </button>
-                                                    <div class="acc-content" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3">
-                                                        <div class="content">
-                                                            <div class="text">
-                                                                Yes. We do back-book write-ups for any period. We rebuild ledgers, reconcile banks and produce P&amp;L and balance sheets for past years.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <!--Block-->
-                                                <li class="accordion block wow fadeInUp" data-wow-delay=".6s">
-                                                <button class="acc-btn" id="acc-btn-4" type="button" aria-expanded="false" aria-controls="acc-panel-4">
-                                                        Do you handle payroll too?
-                                                        <span class="icon fa-solid fa-plus" aria-hidden="true"></span>
-                                                    </button>
-                                                    <div class="acc-content" id="acc-panel-4" role="region" aria-labelledby="acc-btn-4">
-                                                        <div class="content">
-                                                            <div class="text">
-                                                                Yes. We run monthly payroll, generate payslips, calculate PF, ESI and TDS on salary, and file Form 24Q. Available from 5 employees and up.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <!--Block-->
-                                                <li class="accordion block mb-0 wow fadeInUp" data-wow-delay=".8s">
-                                                <button class="acc-btn" id="acc-btn-5" type="button" aria-expanded="false" aria-controls="acc-panel-5">
-                                                    What do you need from me each month?
-                                                        <span class="icon fa-solid fa-plus" aria-hidden="true"></span>
-                                                    </button>
-                                                    <div class="acc-content" id="acc-panel-5" role="region" aria-labelledby="acc-btn-5">
-                                                        <div class="content">
-                                                            <div class="text">
-                                                                Sales invoices, purchase bills, expense bills, bank statements and payroll inputs. You drop them in a shared folder. We do the rest.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                        <div class="rf-faq__list rf-faq__list--inline mt-5">
+                                            <details class="rf-faq-item" open>
+                                                <summary class="rf-faq-item__q">
+                                                    <span>Do you work on Tally or Zoho Books?</span>
+                                                    <span class="rf-faq-item__icon" aria-hidden="true"></span>
+                                                </summary>
+                                                <div class="rf-faq-item__body">
+                                                    <p>Both. Tally is the default for trading and manufacturing. Zoho Books works well for service businesses and startups. We also handle QuickBooks and Xero.</p>
+                                                </div>
+                                            </details>
+                                            <details class="rf-faq-item">
+                                                <summary class="rf-faq-item__q">
+                                                    <span>Will you also file my GST and TDS?</span>
+                                                    <span class="rf-faq-item__icon" aria-hidden="true"></span>
+                                                </summary>
+                                                <div class="rf-faq-item__body">
+                                                    <p>Yes. Our books feed straight into GST and TDS returns. You get one team for accounting and filings. No vendor hand-offs and no reconciliation gaps.</p>
+                                                </div>
+                                            </details>
+                                            <details class="rf-faq-item">
+                                                <summary class="rf-faq-item__q">
+                                                    <span>Can you fix two years of pending books?</span>
+                                                    <span class="rf-faq-item__icon" aria-hidden="true"></span>
+                                                </summary>
+                                                <div class="rf-faq-item__body">
+                                                    <p>Yes. We do back-book write-ups for any period. We rebuild ledgers, reconcile banks and produce P&amp;L and balance sheets for past years.</p>
+                                                </div>
+                                            </details>
+                                            <details class="rf-faq-item">
+                                                <summary class="rf-faq-item__q">
+                                                    <span>Do you handle payroll too?</span>
+                                                    <span class="rf-faq-item__icon" aria-hidden="true"></span>
+                                                </summary>
+                                                <div class="rf-faq-item__body">
+                                                    <p>Yes. We run monthly payroll, generate payslips, calculate PF, ESI and TDS on salary, and file Form 24Q. Available from 5 employees and up.</p>
+                                                </div>
+                                            </details>
+                                            <details class="rf-faq-item">
+                                                <summary class="rf-faq-item__q">
+                                                    <span>What do you need from me each month?</span>
+                                                    <span class="rf-faq-item__icon" aria-hidden="true"></span>
+                                                </summary>
+                                                <div class="rf-faq-item__body">
+                                                    <p>Sales invoices, purchase bills, expense bills, bank statements and payroll inputs. You drop them in a shared folder. We do the rest.</p>
+                                                </div>
+                                            </details>
                                         </div>
                                     </div>
                                 </div>
@@ -614,7 +601,7 @@
                                                 </a>
                                             </div>
                                             <div class="white-logo">
-                                                <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                                                <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com" width="180" height="180">
                                             </div>
                                         </div>
                                     </div>
@@ -752,7 +739,7 @@
                                         <div class="footer-widget-items">
                                             <div class="widget-head">
                                                 <a href="index.html" class="footer-logo">
-                                                    <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                                                    <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com" width="180" height="180">
                                                 </a>
                                             </div>
                                             <div class="footer-content">
@@ -877,6 +864,7 @@
                                             <li><a href="disclaimer.html">Disclaimer</a></li>
                                         </ul>
                                 </div>
+                                <p class="rf-credit">Made with <i class="fa-solid fa-heart rf-credit__heart" aria-hidden="true"></i> by <a href="https://www.struxdigital.com" target="_blank" rel="noopener noreferrer">Strux Digital</a></p>
                             </div>
                         </div>
                     </div>
@@ -914,7 +902,6 @@
         <!--<< Parallaxie Js >>-->
         <!--<< Magnific Popup Js >>-->
         <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/jquery.nice-select.min.js"></script>
         <script src="assets/js/custom.js"></script>

@@ -26,15 +26,14 @@
         <!-- ======== Page title ============ -->
         <title>GST Services in India &mdash; Registration, Returns &amp; Refunds | RequiredFilings.com</title>
         <!--<< Favcion >>-->
-        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png">
         <!--<< Bootstrap min.css >>-->
                 <link rel="preload" as="image" href="assets/img/breadcrumb-bg.webp" type="image/webp" fetchpriority="high">
         <link rel="preload" as="font" type="font/woff2" href="assets/webfonts/fa-solid-900.woff2" crossorigin>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
         <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
         <!--<< MeanMenu.css >>-->
         <link rel="stylesheet" href="assets/css/meanmenu.css">
         <!--<< Nice Select.css >>-->
@@ -68,7 +67,7 @@
                         <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/black-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                                    <img src="assets/img/logo/black-logo.png" alt="RequiredFilings.com" width="180" height="180">
                                 </a>
                             </div>
                             <div class="offcanvas__close">
@@ -155,7 +154,7 @@
                     <div class="mega-menu-wrapper">
                         <div class="header-main">
                             <a href="index.html" class="logo">
-                                <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                                <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com" width="180" height="180">
                             </a>
                             <div class="mean__menu-wrapper">
                                 <div class="main-menu">
@@ -348,28 +347,46 @@
         <div class="rf-scroll-wrapper">
             <div class="rf-scroll-content" id="main-content">
 
-                <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb-bg.webp');">
+                <!-- Service Hero Section Start -->
+                <section class="rf-service-hero" aria-label="GST Services">
+                    <div class="rf-service-hero__bg-img" aria-hidden="true"></div>
+                    <div class="rf-service-hero__glow rf-service-hero__glow--1" aria-hidden="true"></div>
+                    <div class="rf-service-hero__glow rf-service-hero__glow--2" aria-hidden="true"></div>
                     <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">GST Registration and Return Filing</h1>
+                        <nav class="rf-service-hero__breadcrumb wow fadeInUp" aria-label="Breadcrumb">
+                            <a href="index.html">Home</a>
+                            <span class="sep" aria-hidden="true">/</span>
+                            <a href="services.html">Services</a>
+                            <span class="sep" aria-hidden="true">/</span>
+                            <span aria-current="page">GST Services</span>
+                        </nav>
+                        <div class="rf-service-hero__inner wow fadeInUp" data-wow-delay=".15s">
+                            <span class="rf-service-hero__tag">/ GST Services</span>
+                            <h1 class="rf-service-hero__h1">
+                                GST filed.<br>
+                                Returns matched.<br>
+                                <span class="rf-grad">No notices.</span>
+                            </h1>
+                            <p class="rf-service-hero__sub">
+                                Registration, monthly returns (GSTR-1, GSTR-3B), reconciliation and notice replies &mdash; handled by qualified professionals.
+                            </p>
+                            <div class="rf-service-hero__ctas">
+                                <a href="contact.html" class="theme-btn">
+                                    <div class="btn_inner">
+                                        <div class="btn_icon"><span>
+                                        <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                        </span></div>
+                                        <div class="btn_text"><span>Talk to a filing expert</span></div>
+                                    </div>
+                                </a>
+                                <a href="services.html" class="rf-outline-btn rf-outline-btn--on-dark">
+                                    Explore all services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                </a>
                             </div>
-                            <nav aria-label="Breadcrumb">
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house" aria-hidden="true"></i> Home
-                                    </a>
-                                </li>
-                                <li>
-                                    /
-                                </li>
-                                <li><span aria-current="page">GST Registration and Return Filing</span></li>
-                            </ul></nav>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Service Section Start -->
                 <section class="feature-section section-padding fix">
@@ -692,7 +709,7 @@
                                         <div class="footer-widget-items">
                                             <div class="widget-head">
                                                 <a href="index.html" class="footer-logo">
-                                                    <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                                                    <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com" width="180" height="180">
                                                 </a>
                                             </div>
                                             <div class="footer-content">
@@ -817,6 +834,7 @@
                                             <li><a href="disclaimer.html">Disclaimer</a></li>
                                         </ul>
                                 </div>
+                                <p class="rf-credit">Made with <i class="fa-solid fa-heart rf-credit__heart" aria-hidden="true"></i> by <a href="https://www.struxdigital.com" target="_blank" rel="noopener noreferrer">Strux Digital</a></p>
                             </div>
                         </div>
                     </div>
@@ -854,7 +872,6 @@
         <!--<< Parallaxie Js >>-->
         <!--<< Magnific Popup Js >>-->
         <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/custom.js"></script>
         <!--<< Main.js >>-->

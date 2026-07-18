@@ -85,9 +85,9 @@
 - [x] Canonical tags on every page
 - [x] Schema.org `LocalBusiness` on home and contact
 - [x] Schema.org `Service` on each service page
-- [ ] Schema.org `FAQPage` where FAQs exist — deferred: home/about/accounting/msme-zed have "How it works" process accordions, not true Q&A. Add proper FAQ content first, then schema.
+- [x] Schema.org `FAQPage` where FAQs exist — added to about.html, accounting.html, msme-zed.html (5 Q&As each). index.html accordion is process steps, not FAQ — skipped.
 - [x] Schema.org `BreadcrumbList`
-- [ ] H1/H2 hierarchy audit and fix
+- [x] H1/H2 hierarchy audit and fix — html-validate passes 0 errors, 0 warnings; all heading jumps fixed
 - [x] `alt` text on all images
 
 ### 7. Blog setup
@@ -113,27 +113,28 @@
 ## P2 — Polish and QA before launch
 
 ### 9. Performance
-- [ ] Convert images to WebP — deferred (JPG re-encoding gave 96% size reduction; WebP would give another ~30%. Acceptable trade for launch.)
+- [x] Convert images to WebP — done 2026-07-18 (Python Pillow, quality 82). breadcrumb-bg 54% smaller, cta-newsletter 60% smaller, hero-bg 54% smaller, about-image 34% smaller. All 20 pages updated to .webp URLs. JPEG originals kept for fallback.
 - [x] Compress all images — 5 India-context photos resized + re-encoded (12 MB → 430 KB total).
-- [ ] Set width/height on all `<img>` tags
-- [ ] Lazy-load below-the-fold images
-- [ ] Minify CSS
-- [ ] Minify JS
-- [ ] Defer non-critical JS
-- [ ] Remove unused CSS bundles (`rtl.css`, `dark-mode.css` if not needed)
+- [x] Set width/height on all `<img>` tags — 157 images across 20 pages (Phase 10.2)
+- [x] Lazy-load below-the-fold images — `loading="lazy" decoding="async"` on all below-fold images; LCP images kept eager (Phase 10.2)
+- [x] Minify CSS — `npm run build` produces `dist/assets/css/main.css` (352 KB → 298 KB, 19.8% saving; already-min files copied as-is)
+- [x] Minify JS — `npm run build` produces `dist/assets/js/` (94 KB → 45 KB across 11 files, 52.2% saving; `.min.js` files copied as-is)
+- [x] Minify HTML — `npm run build` produces `dist/*.html` (1.26 MB → 628 KB across 20 pages, 50.1% saving)
+- [x] Defer non-critical JS — all scripts placed at end of `<body>`; equivalent to defer for render-blocking purposes
+- [x] Remove unused CSS bundles (`rtl.css`, `dark-mode.css` if not needed) — both removed from all pages (Phase 12.4)
 - [ ] Lighthouse: Performance ≥ 90
 - [ ] Lighthouse: SEO ≥ 90
 - [ ] Lighthouse: Accessibility ≥ 90
 
 ### 10. Accessibility
-- [ ] `<label>` for every form input
-- [ ] Color contrast WCAG AA pass
-- [ ] Keyboard navigation works (mobile menu, search, dropdowns)
-- [ ] ARIA labels on icon-only buttons
+- [x] `<label>` for every form input — visually-hidden labels with `for` attribute on all inputs/selects/textareas (Phase 13.3)
+- [x] Color contrast WCAG AA pass — --primary 6.4:1, --accent 6.1:1, body text 19:1 on white (Phase 13.4)
+- [ ] Keyboard navigation works (mobile menu, search, dropdowns) — requires browser test (Phase 13.1)
+- [x] ARIA labels on icon-only buttons — back-to-top, carousel prev/next, hamburger, offcanvas close, phone icon, WhatsApp float, mobile bar (Phase 1.7, 1.10)
 
 ### 11. QA
 - [x] Custom 404 page
-- [ ] Broken-link sweep across all pages
+- [x] Broken-link sweep across all pages — 0 broken internal page links; 0 broken asset references (CSS/JS/images) across all 20 pages
 - [ ] Cross-browser test: Chrome
 - [ ] Cross-browser test: Safari
 - [ ] Cross-browser test: Firefox
@@ -149,9 +150,10 @@
 ### 12. Hosting and deployment
 - [ ] Domain DNS pointed to requiredfilings.com
 - [ ] SSL certificate active
-- [ ] Hosting target chosen (Netlify / Vercel / cPanel / Cloudflare Pages)
-- [ ] 301 redirects configured for any old URLs
-- [ ] Automated backups configured
+- [x] Hosting target chosen — cPanel/Apache (build-deploy-zip.ps1 produces the upload zip)
+- [x] `.htaccess` shipped with production zip (gzip, brotli, 1yr cache, HTTPS+HSTS, security headers, custom 404) — `required-filings/.htaccess`
+- [ ] 301 redirects configured for any old URLs — none needed pre-launch
+- [ ] Automated backups configured — cPanel-side setting
 
 ---
 

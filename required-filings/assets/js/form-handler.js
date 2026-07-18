@@ -153,7 +153,7 @@
     // so the bot has no signal to retry.
     if (payload.cf_website && String(payload.cf_website).trim() !== "") {
       if (FORM_CONFIG.clearFormOnSuccess) form.reset();
-      showMessage(form, "success", FORM_CONFIG.successMessage);
+      showMessage(form, "success", form.dataset.successMessage || FORM_CONFIG.successMessage);
       return;
     }
     // Don't ship the honeypot value to Pabbly even when empty — it's noise.
@@ -182,7 +182,7 @@
 
       // If we got here, the network request didn't blow up -> count it as success.
       if (FORM_CONFIG.clearFormOnSuccess) form.reset();
-      showMessage(form, "success", FORM_CONFIG.successMessage);
+      showMessage(form, "success", form.dataset.successMessage || FORM_CONFIG.successMessage);
     } catch (err) {
       // Only true network failures (offline, DNS error, CORS preflight blocked, etc.)
       // land here. Surface the error to the user and the full stack to the console.
