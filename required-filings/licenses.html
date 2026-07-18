@@ -26,19 +26,17 @@
         <!-- ======== Page title ============ -->
         <title>Business Licenses &mdash; FSSAI, Drug, Trade, Labour | RequiredFilings.com</title>
         <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
         <!--<< Bootstrap min.css >>-->
+                <link rel="preload" as="image" href="assets/img/breadcrumb-bg.webp" type="image/webp" fetchpriority="high">
+        <link rel="preload" as="font" type="font/woff2" href="assets/webfonts/fa-solid-900.woff2" crossorigin>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
         <link rel="stylesheet" href="assets/css/all.min.css">
         <!--<< Animate.css >>-->
         <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <!--<< MeanMenu.css >>-->
         <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!--<< Swiper Bundle.css >>-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
         <!--<< Nice Select.css >>-->
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
@@ -54,7 +52,7 @@
          <a class="skip-link" href="#main-content">Skip to main content</a>
         <div class="page-wrapper">
         <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
+        <button id="back-top" type="button" class="back-to-top" aria-label="Back to top">
             <i class="fa-regular fa-arrow-up" aria-hidden="true"></i>
         </button>
 
@@ -70,7 +68,7 @@
                         <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/black-logo.svg" alt="RequiredFilings.com">
+                                    <img src="assets/img/logo/black-logo.svg" alt="RequiredFilings.com" width="180" height="180">
                                 </a>
                             </div>
                             <div class="offcanvas__close">
@@ -82,7 +80,7 @@
                         </p>
                         <div class="mobile-menu fix mb-3"></div>
                         <div class="offcanvas__contact">
-                            <h4>Contact Info</h4>
+                            <p class="offcanvas-contact-heading">Contact Info</p>
                             <ul>
                                 <li class="d-flex align-items-center">
                                     <div class="offcanvas__contact-icon">
@@ -113,7 +111,7 @@
                                         <i class="far fa-phone" aria-hidden="true"></i>
                                     </div>
                                     <div class="offcanvas__contact-text">
-                                        <a href="tel:+919502715353">+91 95027 15353</a>
+                                        <a href="tel:+919502715353">+91&nbsp;95027&nbsp;15353</a>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
@@ -151,97 +149,207 @@
         </div>
         <div class="offcanvas__overlay"></div>
 
-        <!-- Header Section Start -->
-        <header id="header-sticky" class="header-1">
-            <div class="container">
-                <div class="mega-menu-wrapper">
-                    <div class="header-main">
-                        <a href="index.html" class="logo">
-                            <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com">
-                        </a>
-                        <div class="header-left">
+            <!-- Header Section Start -->
+            <header id="header-sticky" class="header-1 rf-nav">
+                <div class="container">
+                    <div class="mega-menu-wrapper">
+                        <div class="header-main">
+                            <a href="index.html" class="logo">
+                                <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com" width="180" height="180">
+                            </a>
                             <div class="mean__menu-wrapper">
                                 <div class="main-menu">
-                                   <nav id="mobile-menu" aria-label="Main navigation">
-                                            <ul>
-                                                <li>
-                                                    <a href="index.html">Home</a>
-                                                </li>
-                                                <li class="has-dropdown">
-                                                    <a href="javascript:void(0)">
-                                                        Company Registration
-                                                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="start-a-business.html">Start a Business</a></li>
-                                                        <li><a href="statutory-registrations.html">Statutory Registrations</a></li>
-                                                        <li><a href="licenses.html" aria-current="page">Licenses</a></li>
-                                                        <li><a href="roc-compliance.html">ROC &amp; Corporate Compliance</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown">
-                                                    <a href="javascript:void(0)">
-                                                        Accounting
-                                                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="tax-services.html">Tax Services</a></li>
-                                                        <li><a href="gst-services.html">GST Services</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown">
-                                                    <a href="javascript:void(0)">
-                                                        Services
-                                                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="services.html">All Services</a></li>
-                                                        <li><a href="ipr.html">Intellectual Property Rights</a></li>
-                                                        <li><a href="iso-certification.html">ISO Certification</a></li>
-                                                        <li><a href="msme-zed.html">MSME &amp; ZED Certification</a></li>
-                                                        <li><a href="accounting.html">Financial Accounting &amp; Bookkeeping</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="about.html">About Us</a>
-                                                </li>
-                                                
-                                                <li>
-                                                    <a href="contact.html">Contact</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
+                                    <nav id="mobile-menu" aria-label="Main navigation">
+                                        <ul>
+                                            <li>
+                                                <a href="index.html">Home</a>
+                                            </li>
+                                            <li class="has-dropdown has-mega">
+                                                <a href="javascript:void(0)" aria-current="page" aria-haspopup="true" aria-expanded="false">
+                                                    Company Registration
+                                                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                                </a>
+                                                <ul class="submenu rf-mega rf-mega--4">
+                                                    <li>
+                                                        <a href="start-a-business.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">Start a Business</span>
+                                                                <span class="rf-mega__desc">Incorporate a Pvt Ltd, LLP or OPC.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="statutory-registrations.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">Statutory Registrations</span>
+                                                                <span class="rf-mega__desc">PAN, TAN, PF, ESIC and Shops &amp; Est.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="licenses.html" aria-current="page">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M7 15h6M7 18h4"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">Licenses</span>
+                                                                <span class="rf-mega__desc">Trade, FSSAI, IEC and regulatory approvals.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="roc-compliance.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">ROC &amp; Corporate Compliance</span>
+                                                                <span class="rf-mega__desc">Annual filings, DIR-3 KYC and board minutes.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-dropdown has-mega">
+                                                <a href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
+                                                    Accounting
+                                                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                                </a>
+                                                <ul class="submenu rf-mega rf-mega--2">
+                                                    <li>
+                                                        <a href="tax-services.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">Tax Services</span>
+                                                                <span class="rf-mega__desc">Income tax, TDS and statutory audit.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="gst-services.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 14l2 2 4-4"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">GST Services</span>
+                                                                <span class="rf-mega__desc">Registration, monthly returns and notices.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-dropdown has-mega">
+                                                <a href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
+                                                    Services
+                                                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                                </a>
+                                                <ul class="submenu rf-mega rf-mega--4">
+                                                    <li>
+                                                        <a href="services.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">All Services</span>
+                                                                <span class="rf-mega__desc">Every filing we handle, on one page.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="ipr.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">Intellectual Property</span>
+                                                                <span class="rf-mega__desc">Trademarks, copyrights and patents.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="iso-certification.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.21 13.89L7 22l5-3 5 3-1.21-8.11"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">ISO Certification</span>
+                                                                <span class="rf-mega__desc">9001, 14001, 27001 and 45001 audits.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="msme-zed.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">MSME &amp; ZED</span>
+                                                                <span class="rf-mega__desc">Udyam registration and ZED certification.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="accounting.html">
+                                                            <span class="rf-mega__icon" aria-hidden="true">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+                                                            </span>
+                                                            <span class="rf-mega__body">
+                                                                <span class="rf-mega__title">Accounting &amp; Bookkeeping</span>
+                                                                <span class="rf-mega__desc">Monthly books, MIS and payroll.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="about.html">About Us</a>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
-                        </div>
-                        <div class="header-right d-flex justify-content-end align-items-center">
-                            <a href="tel:+919502715353" class="theme-btn d-none d-xxl-block">
-                                <div class="btn_inner">
-                                    <div class="btn_icon">
-                                    <span>
-                                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                                   <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                                    </span>
+                            <div class="header-right d-flex justify-content-end align-items-center">
+                                <a href="tel:+919502715353" class="rf-nav__call d-none d-lg-inline-flex" aria-label="Call +91 95027 15353">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </a>
+                                <a href="contact.html" class="theme-btn d-none d-xxl-block">
+                                    <div class="btn_inner">
+                                        <div class="btn_icon">
+                                        <span>
+                                        <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                        </span>
+                                        </div>
+                                        <div class="btn_text">
+                                        <span>Talk to a filing expert</span>
+                                        </div>
                                     </div>
-                                    <div class="btn_text">
-                                    <span>+91 95027 15353</span>
-                                    </div>
+                                </a>
+                                <div class="header__hamburger d-xl-none my-auto">
+                                    <button class="sidebar__toggle" type="button" aria-label="Open navigation menu"><i class="fa-regular fa-bars" aria-hidden="true"></i></button>
                                 </div>
-                            </a>
-                            <div class="header__hamburger d-xxl-none my-auto">
-                                <button class="sidebar__toggle" type="button" aria-label="Open navigation menu"><i class="fa-regular fa-bars" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
 
         <div class="rf-scroll-wrapper">
             <div class="rf-scroll-content" id="main-content">
 
                 <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb-bg.jpg');">
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb-bg.webp');">
                     <div class="container">
                         <div class="page-heading">
                             <div class="breadcrumb-sub-title">
@@ -277,7 +385,7 @@
 <div class="row g-4">
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="feature-box-items mt-0">
-                                    <h6>001.</h6>
+                                    <p class="item-num">001.</p>
                                     <h3>
                                         <a href="contact.html">FSSAI Food License</a>
                                     </h3>
@@ -298,7 +406,7 @@
                             </div>
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                                 <div class="feature-box-items mt-0">
-                                    <h6>002.</h6>
+                                    <p class="item-num">002.</p>
                                     <h3>
                                         <a href="contact.html">Drug License</a>
                                     </h3>
@@ -319,7 +427,7 @@
                             </div>
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                                 <div class="feature-box-items mt-0">
-                                    <h6>003.</h6>
+                                    <p class="item-num">003.</p>
                                     <h3>
                                         <a href="contact.html">Trade License</a>
                                     </h3>
@@ -340,7 +448,7 @@
                             </div>
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="feature-box-items mt-0">
-                                    <h6>004.</h6>
+                                    <p class="item-num">004.</p>
                                     <h3>
                                         <a href="contact.html">Labour License</a>
                                     </h3>
@@ -361,7 +469,7 @@
                             </div>
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                                 <div class="feature-box-items mt-0">
-                                    <h6>005.</h6>
+                                    <p class="item-num">005.</p>
                                     <h3>
                                         <a href="contact.html">Customs &amp; Excise</a>
                                     </h3>
@@ -382,7 +490,7 @@
                             </div>
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                                 <div class="feature-box-items mt-0">
-                                    <h6>006.</h6>
+                                    <p class="item-num">006.</p>
                                     <h3>
                                         <a href="contact.html">Exports License</a>
                                     </h3>
@@ -402,11 +510,10 @@
                                 </div>
                             </div>
                         </div></div>
-                    </div>
                 </section>
 
                 <!-- Contact Section Start -->
-                <section class="contact-section-2 bg-cover section-padding" style="background-image: url('assets/img/inner-page/contact-bg.jpg');">
+                <section class="contact-section-2 bg-cover section-padding" aria-label="Enquiry Form" style="background-image: url('assets/img/inner-page/contact-bg.jpg');">
                     <div class="container">
                         <div class="contact-wrapper">
                             <div class="row g-4">
@@ -420,7 +527,7 @@
                                         <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Human support on phone or WhatsApp</span></li>
                                     </ul>
                                         <div class="contact-side-trust__links">
-                                        <a href="tel:+919502715353"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 95027 15353</a>
+                                        <a href="tel:+919502715353"><i class="fa-solid fa-phone" aria-hidden="true"></i>&nbsp;+91&nbsp;95027&nbsp;15353</a>
                                         <a href="https://wa.me/919502715353" target="_blank" rel="noopener" class="wa-link"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp</a>
                                     </div>
                                     </div>
@@ -428,34 +535,33 @@
                                 <div class="col-lg-6">
                                     <div class="contact-box-items style-2">   
                                        <div class="section-title">
-                                            <h6 class="sub-title wow fadeInUp">
-                                                <img src="assets/img/home-1/star.svg" alt="" aria-hidden="true" loading="lazy" decoding="async"> tell us what you need
-                                            </h6>
+                                            <p class="sub-title wow fadeInUp"> tell us what you need
+                                            </p>
                                             <h2 class="text-anim text-white">
                                                 Get your license filed.
                                             </h2>
                                         </div>
-                                        <form action="https://connect.pabbly.com/webhook-listener/webhook/IjU3NjAwNTY5MDYzNzA0M2Qi_pc/IjU3NjcwNTY5MDYzNTA0MzM1MjZhNTUzMDUxMzQi_pc" method="POST" id="contact-form" class="contact-form-box">
+                                        <form action="https://connect.pabbly.com/webhook-listener/webhook/IjU3NjAwNTY5MDYzNzA0M2Qi_pc/IjU3NjcwNTY5MDYzNTA0MzM1MjZhNTUzMDUxMzQi_pc" method="POST" id="service-enquiry-form" data-enquiry-form class="contact-form-box">
                                             <div class="row g-4 align-items-center">
                                                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                                     <div class="form-clt">
-                                                        <label for="cf-name" class="visually-hidden">Your full name</label><input type="text" id="cf-name" name="full_name" placeholder="Your full name" autocomplete="name" required minlength="2" maxlength="80">
+                                                        <label for="cf-name">Your full name <span class="rf-req" aria-hidden="true">*</span></label><input type="text" id="cf-name" name="full_name" placeholder="Your full name" autocomplete="name" required minlength="2" maxlength="80">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                                                     <div class="form-clt">
-                                                        <label for="cf-email" class="visually-hidden">Your work email</label><input type="email" id="cf-email" name="email" placeholder="Your work email" autocomplete="email" required maxlength="120">
+                                                        <label for="cf-email">Your work email <span class="rf-req" aria-hidden="true">*</span></label><input type="email" id="cf-email" name="email" placeholder="Your work email" autocomplete="email" required maxlength="120">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                                     <div class="form-clt">
-                                                        <label for="cf-phone" class="visually-hidden">Your phone number</label><input type="tel" id="cf-phone" name="phone" placeholder="Your phone number" autocomplete="tel" required pattern="[0-9+\-\s()]{7,20}" maxlength="20">
+                                                        <label for="cf-phone">Your phone number <span class="rf-req" aria-hidden="true">*</span></label><input type="tel" id="cf-phone" name="phone" placeholder="Your phone number" autocomplete="tel" required pattern="[0-9+\-\s()]{7,20}" maxlength="20">
                                                     </div>
                                                 </div>
                                                  <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                                                     <div class="form-clt">
                                                         <div class="form">
-                                                            <label for="cf-service" class="visually-hidden">Service you need help with</label>
+                                                            <label for="cf-service">Service you need <span class="rf-req" aria-hidden="true">*</span></label>
                                             <select class="single-select w-100" id="cf-service" name="service" required>
                                                                 <option>What do you need?</option>
                                                                 <option selected>FSSAI Food License</option>
@@ -478,7 +584,7 @@
                                                 </div>
                                                 <div class="col-lg-12 wow fadeInUp" data-wow-delay=".3s">
                                                     <div class="form-clt">
-                                                        <label for="cf-message" class="visually-hidden">Your message</label><textarea id="cf-message" name="message" placeholder="Briefly describe your business and which license you need" required minlength="10" maxlength="1500" rows="5"></textarea>
+                                                        <label for="cf-message">Your message <span class="rf-req" aria-hidden="true">*</span></label><textarea id="cf-message" name="message" placeholder="Briefly describe your business and which license you need" required minlength="10" maxlength="1500" rows="5"></textarea>
                                                     </div>
                                                 </div>
                                                                                                 <div class="visually-hidden" aria-hidden="true">
@@ -501,6 +607,9 @@
                                                     </button>
                                                 </div>
                                                 <div class="col-lg-12">
+                                                    <p style="font-size:13px;color:#777;margin-top:8px;margin-bottom:0;">Your details are used only to respond to your enquiry. We don&#39;t sell or share your information.</p>
+                                                </div>
+                                                <div class="col-lg-12">
                                                     <div class="rf-form-msg rf-form-success" role="status" aria-live="polite" hidden>Thanks. A real person will reply within one working day.</div>
                                                     <div class="rf-form-msg rf-form-error" role="alert" aria-live="assertive" hidden>Something went wrong. Please email srivaarahi.gst@srivaarahi.com or call +91 95027 15353.</div>
                                                 </div>
@@ -516,7 +625,7 @@
                 </div>
 
                 <!-- Cta Newsletter Section Start -->
-                <section class="cta-newsletter-section bg-cover" style="background-image: url('assets/img/home-1/cta-newsletter.jpg');">
+                <section class="cta-newsletter-section bg-cover" aria-label="Newsletter" style="background-image: url('assets/img/home-1/cta-newsletter.webp');">
                     <div class="container">
                         <div class="cta-newsletter-wrapper">
                             <h2 class="text-anim">
@@ -524,7 +633,7 @@
                             </h2>
                             <div class="newsletter-form wow fadeInUp" data-wow-delay=".3s"><p>
                                     Get GST, ROC and tax deadline alerts. One email a month. No fluff.
-                                </p><form action="https://connect.pabbly.com/webhook-listener/webhook/IjU3NjAwNTY5MDYzNzA0M2Qi_pc/IjU3NjcwNTY5MDYzNTA0MzM1MjZhNTUzMDUxMzQi_pc" method="POST" id="newsletter-form"><label for="nl-email" class="visually-hidden">Your work email</label><input type="email" id="nl-email" name="email" placeholder="Your work email" autocomplete="email" required maxlength="120">
+                                </p><form action="https://connect.pabbly.com/webhook-listener/webhook/IjU3NjAwNTY5MDYzNzA0M2Qi_pc/IjU3NjcwNTY5MDYzNTA0MzM1MjZhNTUzMDUxMzQi_pc" method="POST" id="newsletter-form" data-success-message="Subscribed! Your first deadline alert will arrive within a month."><label for="nl-email" class="visually-hidden">Your work email</label><input type="email" id="nl-email" name="email" placeholder="Your work email" autocomplete="email" required maxlength="120">
                                     <button class="email-btn" type="submit" aria-label="Subscribe to deadline alerts">
                                         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                                     </button>
@@ -544,7 +653,7 @@
                                         <div class="footer-widget-items">
                                             <div class="widget-head">
                                                 <a href="index.html" class="footer-logo">
-                                                    <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com">
+                                                    <img src="assets/img/logo/white-logo.svg" alt="RequiredFilings.com" width="180" height="180">
                                                 </a>
                                             </div>
                                             <div class="footer-content">
@@ -640,7 +749,7 @@
                                                     India
                                                 </li>
                                                 <li>
-                                                    <a href="tel:+919502715353">+91 95027 15353</a>
+                                                    <a href="tel:+919502715353">+91&nbsp;95027&nbsp;15353</a>
                                                 </li>
                                                 <li><a href="https://wa.me/919502715353" target="_blank" rel="noopener">WhatsApp: +91 95027 15353</a></li>
                                                 <li>
@@ -675,7 +784,6 @@
                 </footer>
             </div>
         </div>
-        </div>
 
        
 
@@ -685,7 +793,6 @@
         <!--<< All JS Plugins >>-->
         <script src="assets/js/jquery-3.7.1.min.js"></script>
         <!--<< Viewport Js >>-->
-        <script src="assets/js/viewport.jquery.js"></script>
         <!--<< Bootstrap Js >>-->
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <!--<< Gsap Min Js >>-->
@@ -693,29 +800,20 @@
         <!--<< ScrollTrigger Min Js >>-->
         <script src="assets/js/ScrollTrigger.min.js"></script>
         <!--<< ScrollSmoother Min Js >>-->
-        <script src="assets/js/ScrollSmoother.min.js"></script>
         <!--<< ScrollToPlugin Min Js >>-->
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
         <!--<< SplitText Min Js >>-->
         <script src="assets/js/SplitText.min.js"></script>
         <!--<< TextPlugin Min Js >>-->
-        <script src="assets/js/TextPlugin.js"></script>
          <!--<< Chroma Min Js >>-->
-        <script src="assets/js/chroma.min.js"></script>
         <!--<< nice-selec Js >>-->
         <script src="assets/js/jquery.nice-select.min.js"></script>
         <!--<< Waypoints Js >>-->
-        <script src="assets/js/jquery.waypoints.js"></script>
         <!--<< Counterup Js >>-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
         <!--<< Swiper Slider Js >>-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
         <!--<< MeanMenu Js >>-->
         <script src="assets/js/jquery.meanmenu.min.js"></script>
         <!--<< Parallaxie Js >>-->
-        <script src="assets/js/parallaxie.js"></script>
         <!--<< Magnific Popup Js >>-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
         <!--<< Wow Animation Js >>-->
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
@@ -736,7 +834,7 @@
         <!-- Mobile Contact Bar (Phase 9.2) -->
         <div class="rf-mobile-bar" role="complementary" aria-label="Quick contact">
             <a href="tel:+919502715353" class="rf-mobile-bar__call" aria-label="Call RequiredFilings">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i> Call us
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>&nbsp;Call&nbsp;us
             </a>
             <a href="https://wa.me/919502715353?text=Hello%20RequiredFilings%2C%20I%20would%20like%20help%20with%20a%20business%20filing." class="rf-mobile-bar__wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp RequiredFilings">
                 <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
