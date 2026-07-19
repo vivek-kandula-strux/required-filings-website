@@ -31,11 +31,13 @@ The wireframe is **locked** as of 2026-06-11, updated 2026-06-29 (preloader + pr
   - Social icons — offcanvas social row, footer social row, all team-card social overlays, and team-card LinkedIn overlays. Reason: no social accounts exist yet. Reintroduce only when real URLs are supplied.
   - Team section — `<section class="team-section-3">` removed from `about.html`. Reason: only two of four slots had real people (founders — already introduced in the founder story above); slots 3–4 were "Profile updating soon" placeholders.
   - Brand carousel — `<div class="brand-section">` (6-logo swiper) removed from `index.html`, `about.html`, `services.html`, and the 8 service pages. Reason: no real client logos exist yet. Reintroduce only when real logos land.
+- **Removed by owner (2026-07-19) — do not reintroduce without asking:**
+  - Service-hero breadcrumb — `<nav class="rf-service-hero__breadcrumb">` (the "Home / Services / Page name" trail inside the hero) removed from all 19 inner pages (about, services, contact, blog, 404, 4 legal, 10 service pages) plus its CSS rules in `main.css`. Owner did not want the trail displayed. The `BreadcrumbList` JSON-LD schema was left in place for SEO.
 - **Do not change the column grid** (`col-lg-*`, `col-xl-*`), card counts per row, image aspect-ratio containers, or swiper slide counts.
 - **Do not delete or rename existing CSS classes** that the wireframe depends on (`hero-section`, `feature-box-items`, `pricing-box-items`, `news-box-items`, `accordion-box`, `marquee-group`, `swiper-slide`, etc.).
 - **Content swaps are fine** — text, image `src`, alt, link href, dropdown options, form `name`/`label`/validation, `<title>`, meta tags, schema, business data, footer addresses.
 - **Visually-hidden helpers are fine** (`sr-only`-style labels, honeypot inputs, ARIA, hidden inputs).
-- **New pages** (e.g. legal pages) must reuse the same template wireframe (header + breadcrumb + content section + footer + script bundle) — do not invent a new layout.
+- **New pages** (e.g. legal pages) must reuse the same template wireframe (header + service-hero + content section + footer + script bundle) — do not invent a new layout.
 - If a change *must* break the wireframe, stop and ask the user first.
 
 ## UTF-8 / encoding rule

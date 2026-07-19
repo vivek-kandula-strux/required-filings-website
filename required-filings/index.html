@@ -48,7 +48,7 @@
         <!--<< Nice Select.css >>-->
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/main.css?v=2026-07-19-3">
         <!-- RF form helpers -->
         <style>.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.rf-form-msg{margin-top:1rem;padding:1rem 1.25rem;border-radius:6px;font-size:.95rem}.rf-form-success{background:#e8f7ee;color:#0e6b3a;border:1px solid #0e6b3a33}.rf-form-error{background:#fdecec;color:#a8232a;border:1px solid #a8232a33}</style>
         <!-- RF bento page styles -->
@@ -269,7 +269,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
 .rf-svc-card h3 { font-size: 16.5px; font-weight: 700; color: var(--tone-title); margin: 0 0 10px; line-height: 1.32; }
 .rf-svc-card__desc { font-size: 14px; color: var(--tone-desc); line-height: 1.68; margin: 0 0 16px; }
 .rf-svc-card__tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-right: 54px; }
-.rf-svc-card__tag { font-size: 11px; font-weight: 600; color: var(--tone-accent); background: var(--tone-accent-soft); padding: 4px 10px; border-radius: 20px; }
+.rf-svc-card__tag { font-size: 11px; font-weight: 600; color: var(--tone-accent); background: var(--tone-accent-soft); padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
 .rf-svc-card__arrow {
     position: absolute; bottom: 22px; right: 22px; width: 42px; height: 42px;
     border-radius: 12px; background: var(--tone-arrow-bg); display: flex;
@@ -384,7 +384,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                         <div class="offcanvas__content">
                             <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                                 <div class="offcanvas__logo">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img src="assets/img/logo/black-logo.png" alt="RequiredFilings.com">
                                     </a>
                                 </div>
@@ -440,7 +440,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                         </div>
                                     </li>
                                 </ul>
-                                <a href="contact.html" class="theme-btn mt-4">
+                                <a href="contact" class="theme-btn mt-4">
                                     <div class="btn_inner">
                                         <div class="btn_icon">
                                         <span>
@@ -465,7 +465,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                 <div class="container">
                     <div class="mega-menu-wrapper">
                         <div class="header-main">
-                            <a href="index.html" class="logo">
+                            <a href="/" class="logo">
                                 <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com" width="180" height="180">
                             </a>
                             <div class="mean__menu-wrapper">
@@ -473,7 +473,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <nav id="mobile-menu" aria-label="Main navigation">
                                         <ul>
                                             <li>
-                                                <a href="index.html" aria-current="page">Home</a>
+                                                <a href="/" aria-current="page">Home</a>
                                             </li>
                                             <li class="has-dropdown has-mega">
                                                 <a href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
@@ -482,7 +482,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                 </a>
                                                 <ul class="submenu rf-mega rf-mega--4">
                                                     <li>
-                                                        <a href="start-a-business.html">
+                                                        <a href="start-a-business">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>
                                                             </span>
@@ -493,7 +493,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="statutory-registrations.html">
+                                                        <a href="statutory-registrations">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                                                             </span>
@@ -504,7 +504,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="licenses.html">
+                                                        <a href="licenses">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M7 15h6M7 18h4"/></svg>
                                                             </span>
@@ -515,7 +515,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="roc-compliance.html">
+                                                        <a href="roc-compliance">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
                                                             </span>
@@ -534,7 +534,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                 </a>
                                                 <ul class="submenu rf-mega rf-mega--2">
                                                     <li>
-                                                        <a href="tax-services.html">
+                                                        <a href="tax-services">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                                                             </span>
@@ -545,7 +545,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="gst-services.html">
+                                                        <a href="gst-services">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 14l2 2 4-4"/></svg>
                                                             </span>
@@ -564,7 +564,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                 </a>
                                                 <ul class="submenu rf-mega rf-mega--4">
                                                     <li>
-                                                        <a href="services.html">
+                                                        <a href="services">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                                                             </span>
@@ -575,7 +575,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="ipr.html">
+                                                        <a href="ipr">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                                                             </span>
@@ -586,7 +586,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="iso-certification.html">
+                                                        <a href="iso-certification">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.21 13.89L7 22l5-3 5 3-1.21-8.11"/></svg>
                                                             </span>
@@ -597,7 +597,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="msme-zed.html">
+                                                        <a href="msme-zed">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                                                             </span>
@@ -608,7 +608,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="accounting.html">
+                                                        <a href="accounting">
                                                             <span class="rf-mega__icon" aria-hidden="true">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
                                                             </span>
@@ -621,10 +621,10 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="about.html">About Us</a>
+                                                <a href="about">About Us</a>
                                             </li>
                                             <li>
-                                                <a href="contact.html">Contact</a>
+                                                <a href="contact">Contact</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -634,7 +634,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                 <a href="tel:+919502715353" class="rf-nav__call d-none d-lg-inline-flex" aria-label="Call +91 95027 15353">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                                 </a>
-                                <a href="contact.html" class="theme-btn d-none d-xxl-block">
+                                <a href="contact" class="theme-btn d-none d-xxl-block">
                                     <div class="btn_inner">
                                         <div class="btn_icon">
                                         <span>
@@ -675,7 +675,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     Company registration, GST, tax, ROC, IPR and certifications &mdash; handled by experts so you never miss a deadline or notice.
                                 </p>
                                 <div class="rf-hero__ctas">
-                                    <a href="contact.html" class="theme-btn">
+                                    <a href="contact" class="theme-btn">
                                         <div class="btn_inner">
                                             <div class="btn_icon"><span>
                                             <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
@@ -684,7 +684,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                             <div class="btn_text"><span>Talk to a Filing Expert</span></div>
                                         </div>
                                     </a>
-                                    <a href="services.html" class="rf-outline-btn rf-outline-btn--on-dark">
+                                    <a href="services" class="rf-outline-btn rf-outline-btn--on-dark">
                                         Explore our services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
@@ -702,8 +702,8 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <h2>The RequiredFilings<br><span>Difference.</span></h2>
                                     <p>For over a decade, qualified professionals have handled every filing for businesses across India &mdash; so you never miss a deadline or receive an unexpected notice.</p>
                                     <div class="rf-why-links">
-                                        <a href="contact.html" class="rf-why-link">Talk to an expert <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                                        <a href="services.html" class="rf-why-link rf-why-link--sec">Explore services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                                        <a href="contact" class="rf-why-link">Talk to an expert <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                                        <a href="services" class="rf-why-link rf-why-link--sec">Explore services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                                 <!-- Right: 2x2 feature grid -->
@@ -742,7 +742,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-section-tag">What we handle</span>
                                     <h2>Every compliance requirement,<br><span>under one roof.</span></h2>
                                 </div>
-                                <a href="services.html" class="theme-btn">
+                                <a href="services" class="theme-btn">
                                     <div class="btn_inner">
                                         <div class="btn_icon"><span>
                                         <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
@@ -754,7 +754,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                             </div>
                             <div class="rf-services-bento">
                                 <!-- Row 1 & 2 left: featured 6×2 dark hero card -->
-                                <a href="start-a-business.html" class="rf-svc-card rf-svc-card--feature rf-svc-card--dark wow fadeInUp" data-wow-delay=".05s">
+                                <a href="start-a-business" class="rf-svc-card rf-svc-card--feature rf-svc-card--dark wow fadeInUp" data-wow-delay=".05s">
                                     <div class="rf-svc-card__num">001.</div>
                                     <h3>Company Registration</h3>
                                     <p class="rf-svc-card__desc">Pvt Ltd, LLP, OPC, partnership, trust, society &mdash; registered in 10 to 15 working days by a chartered accountant or company secretary.</p>
@@ -766,7 +766,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 1 right: w6 -->
-                                <a href="roc-compliance.html" class="rf-svc-card rf-svc-card--w6 wow fadeInUp" data-wow-delay=".1s">
+                                <a href="roc-compliance" class="rf-svc-card rf-svc-card--w6 wow fadeInUp" data-wow-delay=".1s">
                                     <div class="rf-svc-card__num">002.</div>
                                     <h3>ROC &amp; MCA Compliance</h3>
                                     <p class="rf-svc-card__desc">Annual returns, board resolutions, ROC filings and MCA compliance &mdash; never a late fee.</p>
@@ -778,7 +778,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 2 right: w6 -->
-                                <a href="gst-services.html" class="rf-svc-card rf-svc-card--w6 wow fadeInUp" data-wow-delay=".15s">
+                                <a href="gst-services" class="rf-svc-card rf-svc-card--w6 wow fadeInUp" data-wow-delay=".15s">
                                     <div class="rf-svc-card__num">003.</div>
                                     <h3>GST Services</h3>
                                     <p class="rf-svc-card__desc">GST registration, monthly and quarterly returns, notice responses and refunds.</p>
@@ -790,7 +790,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 3 & 4 left: tall 4×2 -->
-                                <a href="tax-services.html" class="rf-svc-card rf-svc-card--tall wow fadeInUp" data-wow-delay=".2s">
+                                <a href="tax-services" class="rf-svc-card rf-svc-card--tall wow fadeInUp" data-wow-delay=".2s">
                                     <div class="rf-svc-card__num">004.</div>
                                     <h3>Tax Services</h3>
                                     <p class="rf-svc-card__desc">Income tax returns, advance tax, TDS, assessments and tax planning for individuals and firms.</p>
@@ -802,7 +802,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 3 right: w8 wide -->
-                                <a href="ipr.html" class="rf-svc-card rf-svc-card--w8 rf-svc-card--dark wow fadeInUp" data-wow-delay=".25s">
+                                <a href="ipr" class="rf-svc-card rf-svc-card--w8 rf-svc-card--dark wow fadeInUp" data-wow-delay=".25s">
                                     <div class="rf-svc-card__num">005.</div>
                                     <h3>IPR Protection</h3>
                                     <p class="rf-svc-card__desc">Trademark, copyright, patent and design filings &mdash; protect what you build.</p>
@@ -814,7 +814,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 4 middle: default w4 -->
-                                <a href="iso-certification.html" class="rf-svc-card wow fadeInUp" data-wow-delay=".3s">
+                                <a href="iso-certification" class="rf-svc-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="rf-svc-card__num">006.</div>
                                     <h3>ISO Certification</h3>
                                     <p class="rf-svc-card__desc">ISO 9001, 14001, 27001 and more &mdash; gap analysis to certification audit, end to end.</p>
@@ -826,7 +826,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 4 right: default w4 -->
-                                <a href="msme-zed.html" class="rf-svc-card wow fadeInUp" data-wow-delay=".35s">
+                                <a href="msme-zed" class="rf-svc-card wow fadeInUp" data-wow-delay=".35s">
                                     <div class="rf-svc-card__num">007.</div>
                                     <h3>MSME &amp; ZED Certification</h3>
                                     <p class="rf-svc-card__desc">Udyam registration, PM VISHWAKARMA and ZED &mdash; unlock government schemes your business qualifies for.</p>
@@ -838,7 +838,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 5 left: w6 -->
-                                <a href="accounting.html" class="rf-svc-card rf-svc-card--w6 wow fadeInUp" data-wow-delay=".4s">
+                                <a href="accounting" class="rf-svc-card rf-svc-card--w6 wow fadeInUp" data-wow-delay=".4s">
                                     <div class="rf-svc-card__num">008.</div>
                                     <h3>Bookkeeping &amp; Accounting</h3>
                                     <p class="rf-svc-card__desc">Monthly accounts, P&amp;L, balance sheet and MIS reports &mdash; so your numbers are always audit-ready.</p>
@@ -850,7 +850,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 5 right: w6 -->
-                                <a href="statutory-registrations.html" class="rf-svc-card rf-svc-card--w6 wow fadeInUp" data-wow-delay=".45s">
+                                <a href="statutory-registrations" class="rf-svc-card rf-svc-card--w6 wow fadeInUp" data-wow-delay=".45s">
                                     <div class="rf-svc-card__num">009.</div>
                                     <h3>Statutory Registrations</h3>
                                     <p class="rf-svc-card__desc">Shops Act, FSSAI, ESI, PF, professional tax and more &mdash; every licence your premises must carry.</p>
@@ -862,7 +862,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                     <span class="rf-svc-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
                                 </a>
                                 <!-- Row 6: full-width finale -->
-                                <a href="licenses.html" class="rf-svc-card rf-svc-card--full rf-svc-card--dark wow fadeInUp" data-wow-delay=".5s">
+                                <a href="licenses" class="rf-svc-card rf-svc-card--full rf-svc-card--dark wow fadeInUp" data-wow-delay=".5s">
                                     <div class="rf-svc-card__num">010.</div>
                                     <h3>Trade Licences &amp; Permits</h3>
                                     <p class="rf-svc-card__desc">Drug licence, fire NOC, RERA, export-import code and sector-specific permits obtained and renewed.</p>
@@ -922,7 +922,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                             <p class="rf-about-counter__desc">Completed for Indian businesses since 2017.</p>
                                         </div>
                                     </div>
-                                    <a href="about.html" class="theme-btn">
+                                    <a href="about" class="theme-btn">
                                         <div class="btn_inner">
                                             <div class="btn_icon"><span>
                                             <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
@@ -969,7 +969,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                 </div>
                             </div>
                             <div class="rf-steps-cta wow fadeInUp" data-wow-delay=".4s">
-                                <a href="contact.html" class="theme-btn">
+                                <a href="contact" class="theme-btn">
                                     <div class="btn_inner">
                                         <div class="btn_icon"><span>
                                         <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
@@ -1010,7 +1010,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                         <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                             <div class="footer-widget-items">
                                                 <div class="widget-head">
-                                                    <a href="index.html" class="footer-logo">
+                                                    <a href="/" class="footer-logo">
                                                         <img src="assets/img/logo/white-logo.png" alt="RequiredFilings.com">
                                                     </a>
                                                 </div>
@@ -1018,7 +1018,7 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                     <p>
                                                         RequiredFilings is your single team for company registration, GST, tax, ROC and certifications across India.
                                                     </p>
-                                                    <a href="contact.html" class="footer-btn">
+                                                    <a href="contact" class="footer-btn">
                                                         <span class="icon"><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
                                                         Tell us about your business
                                                     </a>
@@ -1032,25 +1032,25 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                 </div>
                                                 <ul class="gt-list-area">
                                                     <li>
-                                                        <a href="about.html">
+                                                        <a href="about">
                                                             About us
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="services.html">
+                                                        <a href="services">
                                                             All services
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="blog.html">Blog &mdash; Coming soon</a>
+                                                        <a href="blog">Blog &mdash; Coming soon</a>
                                                     </li>
                                                     <li>
-                                                        <a href="contact.html">
+                                                        <a href="contact">
                                                         Contact
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="contact.html">
+                                                        <a href="contact">
                                                         Talk to an expert
                                                         </a>
                                                     </li>
@@ -1064,32 +1064,32 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                                 </div>
                                                 <ul class="gt-list-area">
                                                     <li>
-                                                        <a href="start-a-business.html">
+                                                        <a href="start-a-business">
                                                             Start a business
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="gst-services.html">
+                                                        <a href="gst-services">
                                                         GST services
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="tax-services.html">
+                                                        <a href="tax-services">
                                                             Tax services
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="roc-compliance.html">
+                                                        <a href="roc-compliance">
                                                         ROC compliance
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="licenses.html">
+                                                        <a href="licenses">
                                                         Licenses
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="iso-certification.html">
+                                                        <a href="iso-certification">
                                                         ISO certification
                                                         </a>
                                                     </li>
@@ -1127,13 +1127,13 @@ hr.rf-why-rule { border: none; border-top: 1px solid var(--border-default); marg
                                             &copy; <span data-current-year>2026</span> <b>RequiredFilings.com.</b> All rights reserved.
                                         </p>
                                         <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
-                                            <li><a href="privacy.html">Privacy</a></li>
+                                            <li><a href="privacy">Privacy</a></li>
                                             <li>&middot;</li>
-                                            <li><a href="terms.html">Terms</a></li>
+                                            <li><a href="terms">Terms</a></li>
                                             <li>&middot;</li>
-                                            <li><a href="refund.html">Refund</a></li>
+                                            <li><a href="refund">Refund</a></li>
                                             <li>&middot;</li>
-                                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                                            <li><a href="disclaimer">Disclaimer</a></li>
                                         </ul>
                                     </div>
                                 <p class="rf-credit">Made with <i class="fa-solid fa-heart rf-credit__heart" aria-hidden="true"></i> by <a href="https://www.struxdigital.com" target="_blank" rel="noopener noreferrer">Strux Digital</a></p>
